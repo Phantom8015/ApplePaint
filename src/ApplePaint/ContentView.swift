@@ -17,16 +17,14 @@ struct ContentView: View {
     @State private var isErasing = false
     @State private var showColorPicker = false
     @State private var showLineWidthPicker = false
-    @State private var colors: [Color] = [.blue, .red, .green, .orange, .purple, .black]
+    @State private var colors: [Color] = [.blue, .red, .green, .orange, .purple, .black, .white]
     @State private var redoStack: [(color: Color, lineWidth: CGFloat, points: [CGPoint])] = []
     @State private var tappedLocation: CGPoint?
 
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                
-                Color.white
-                
+                VisualEffectBlur()
                 
                 Canvas { context, size in
                     for path in paths {
@@ -59,7 +57,6 @@ struct ContentView: View {
                         }
                     }
                     
-                    
                     if !currentPoints.isEmpty {
                         var currentPath = Path()
                         currentPath.move(to: currentPoints[0])
@@ -75,7 +72,7 @@ struct ContentView: View {
                         
                         context.stroke(
                             currentPath,
-                            with: .color(isErasing ? .white : selectedColor),
+                            with: .color(isErasing ? Color.clear : selectedColor),
                             style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
                         )
                     }
@@ -93,11 +90,16 @@ struct ContentView: View {
                                     } else {
                                         currentPoints.append(tapLocation)
                                     }
+                                    if isErasing {
+                                        eraseAt(location: tapLocation)
+                                    }
                                 }
                                 .onEnded { _ in
                                     if !currentPoints.isEmpty {
-                                        let finalColor = isErasing ? Color.white : selectedColor
-                                        paths.append((finalColor, lineWidth, currentPoints))
+                                        let finalColor = isErasing ? Color.clear : selectedColor
+                                        if !isErasing {
+                                            paths.append((finalColor, lineWidth, currentPoints))
+                                        }
                                         redoStack.removeAll()
                                     }
                                     currentPoints = []
@@ -130,7 +132,7 @@ struct ContentView: View {
                         }
 
                         Circle()
-                            .fill(Color.white)
+                            .fill(Color.clear)
                             .frame(width: 20, height: 20)
                             .shadow(color: Color.black.opacity(0.2), radius: 4)
                             .overlay(
@@ -146,7 +148,7 @@ struct ContentView: View {
                             }
 
                         Circle()
-                            .fill(Color.white)
+                            .fill(Color.clear)
                             .frame(width: 20, height: 20)
                             .overlay(
                                 Image(systemName: "eraser")
@@ -160,7 +162,7 @@ struct ContentView: View {
                             }
 
                         Circle()
-                            .fill(Color.white)
+                            .fill(Color.clear)
                             .frame(width: 20, height: 20)
                             .overlay(
                                 Circle()
@@ -179,7 +181,7 @@ struct ContentView: View {
                             }
 
                         Circle()
-                            .fill(Color.white)
+                            .fill(Color.clear)
                             .frame(width: 20, height: 20)
                             .shadow(color: Color.black.opacity(0.2), radius: 4)
                             .overlay(
@@ -194,7 +196,7 @@ struct ContentView: View {
                             }
 
                         Circle()
-                            .fill(Color.white)
+                            .fill(Color.clear)
                             .frame(width: 20, height: 20)
                             .shadow(color: Color.black.opacity(0.2), radius: 4)
                             .overlay(
@@ -209,7 +211,7 @@ struct ContentView: View {
                             }
 
                         Circle()
-                            .fill(Color.white)
+                            .fill(Color.clear)
                             .frame(width: 20, height: 20)
                             .shadow(color: Color.black.opacity(0.2), radius: 4)
                             .overlay(
@@ -226,7 +228,7 @@ struct ContentView: View {
                             }
                     }
                     .padding(8)
-                    .background(Capsule().fill(Color.white).shadow(radius: 2))
+                    .background(Capsule().fill(Color.clear).shadow(radius: 2))
                 }
                 .padding(.bottom, 16),
                 alignment: .bottom
@@ -269,6 +271,15 @@ struct ContentView: View {
                     .buttonStyle(PlainButtonStyle())
                 }
                 .padding()
+            }
+        }
+    }
+
+    private func eraseAt(location: CGPoint) {
+        paths.removeAll { path in
+            path.points.contains { point in
+                let distance = hypot(point.x - location.x, point.y - location.y)
+                return distance <= lineWidth
             }
         }
     }
