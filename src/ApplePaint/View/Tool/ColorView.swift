@@ -12,14 +12,13 @@ struct ColorView: View {
     @EnvironmentObject var appCanvas: AppCanvas
     @EnvironmentObject var appSetter: AppSetter
 
-    // MARK: Body
     var body: some View {
         VStack(spacing: 8) {
             ForEach(
                 (appCanvas.baseColor + appCanvas.customizeColor), id: \.self
             ) { color in
                 color
-                    .frame(width: 20, height: 20).cornerRadius(12)
+                    .frame(width: 16, height: 16).cornerRadius(8)
                     .simultaneousGesture(
                         TapGesture(count: 1)
                             .onEnded {
@@ -29,7 +28,7 @@ struct ColorView: View {
                                 appCanvas.isErasing = false
                                 appSetter.showToast(
                                     message: NSLocalizedString(
-                                        "Pick Color: ", comment: "选择颜色:")
+                                        "Pick Color: ", comment: "Pick Color: ")
                                         + appCanvas.selectedColor.toHex())
                             }
                     )
@@ -39,7 +38,7 @@ struct ColorView: View {
                                 appCanvas.appendColor()
                                 appSetter.showToast(
                                     message: NSLocalizedString(
-                                        "Open Color Panel", comment: "打开颜色面板"))
+                                        "Open Color Panel", comment: "Open Color Panel"))
                             }
                     )
                     .contextMenu {
@@ -48,12 +47,12 @@ struct ColorView: View {
                                 appCanvas.deleteCustomizeColor(color: color)
                                 appSetter.showToast(
                                     message: NSLocalizedString(
-                                        "Remove Color", comment: "删除颜色"))
+                                        "Remove Color", comment: "Remove Color"))
                             },
                             label: {
                                 Text(
                                     NSLocalizedString(
-                                        "Remove Color", comment: "删除颜色"))
+                                        "Remove Color", comment: "Remove Color"))
                             })
                         Button(
                             action: {
@@ -64,13 +63,13 @@ struct ColorView: View {
                                     forType: .string)
                                 appSetter.showToast(
                                     message: NSLocalizedString(
-                                        "Copy Color", comment: "拷贝颜色 Hex")
+                                        "Copy Color", comment: "Copy Color Hex")
                                 + ": " + color.toHex())
                             },
                             label: {
                                 Text(
                                     NSLocalizedString(
-                                        "Copy Color", comment: "拷贝颜色 Hex"))
+                                        "Copy Color", comment: "Copy Color Hex"))
                             })
                         if !(appCanvas.baseColor + appCanvas.tempColor)
                             .contains(color)
@@ -81,7 +80,7 @@ struct ColorView: View {
                                     appSetter.showToast(
                                         message: NSLocalizedString(
                                             "Add Color Perpetual",
-                                            comment: "添加颜色")
+                                            comment: "Add Color")
                                             + ":    "
                                             + color.toHex())
                                 },
@@ -89,7 +88,7 @@ struct ColorView: View {
                                     Text(
                                         NSLocalizedString(
                                             "Add Color Perpetual",
-                                            comment: "添加颜色"))
+                                            comment: "Add Color"))
                                 })
                         }
                     }

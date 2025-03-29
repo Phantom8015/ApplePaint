@@ -16,38 +16,38 @@ struct ApplePaintApp: App {
     @StateObject var appCanvas = AppCanvas.shared
     @StateObject var appSetter = AppSetter.shared
     
-    let undo = NSLocalizedString("Undo", comment: "撤销")
-    let redo = NSLocalizedString("Redo", comment: "取消撤销")
-    let eraser = NSLocalizedString("Eraser", comment: "橡皮擦")
-    let enableEraser = NSLocalizedString("Enable Eraser", comment: "打开橡皮擦")
-    let unenableEraser = NSLocalizedString("Unenable Eraser", comment: "关闭橡皮擦")
-    let clearAll = NSLocalizedString("Clear All", comment: "清空画布")
-    let colorRollBack = NSLocalizedString("Color RollBack", comment: "上一个颜色")
-    let addColorPerpetual = NSLocalizedString("Add Color Perpetual", comment: "添加颜色")
-    let removeColor = NSLocalizedString("Remove Color", comment: "删除颜色")
-    let thickness = NSLocalizedString("Thickness", comment: "画笔粗细")
-    let thickness1 = NSLocalizedString("Thickness 1", comment: "1 像素")
-    let thickness2 = NSLocalizedString("Thickness 2", comment: "2 像素")
-    let thickness3 = NSLocalizedString("Thickness 3", comment: "3 像素")
-    let thickness4 = NSLocalizedString("Thickness 4", comment: "4 像素")
-    let thickness5 = NSLocalizedString("Thickness 5", comment: "5 像素")
-    let thickness6 = NSLocalizedString("Thickness 6", comment: "6 像素")
-    let thickness7 = NSLocalizedString("Thickness 7", comment: "7 像素")
-    let thickness8 = NSLocalizedString("Thickness 8", comment: "8 像素")
-    let thickness9 = NSLocalizedString("Thickness 9", comment: "9 像素")
-    let thickness10 = NSLocalizedString("Thickness 10", comment: "10 像素")
-    let pickColor = NSLocalizedString("Pick Color", comment: "选择颜色")
-    let selectedColor = NSLocalizedString("Pick Color: ", comment: "选择颜色:")
-    let openCanvasWindow = NSLocalizedString("Open Canvas Window", comment: "打开画布")
-    let openColorPanel = NSLocalizedString("Open Color Panel", comment: "打开颜色面板")
-    let openToolWindow = NSLocalizedString("Open Tool Window", comment: "打开工具面板")
-    let bringCanvasToFront = NSLocalizedString("Bring Canvas to Front", comment: "置顶画布")
-    let bringColorPanelToFront = NSLocalizedString("Bring Color Panel to Front", comment: "置顶颜色面板")
-    let bringToolWindowToFront = NSLocalizedString("Bring Tool Window to Front", comment: "置顶工具面板")
-    let enlargeSize = NSLocalizedString("Enlarge Canvas Size", comment: "放大画布")
-    let shrinkSize = NSLocalizedString("Shrink Canvas Size", comment: "缩小画布")
+    let undo = NSLocalizedString("Undo", comment: "")
+    let redo = NSLocalizedString("Redo", comment: "")
+    let eraser = NSLocalizedString("Eraser", comment: "")
+    let enableEraser = NSLocalizedString("Enable Eraser", comment: "")
+    let disableEraser = NSLocalizedString("Disable Eraser", comment: "")
+    let clearAll = NSLocalizedString("Clear All", comment: "")
+    let colorRollBack = NSLocalizedString("Color RollBack", comment: "")
+    let addColorPerpetual = NSLocalizedString("Add Color Perpetual", comment: "")
+    let removeColor = NSLocalizedString("Remove Color", comment: "")
+    let thickness = NSLocalizedString("Thickness", comment: "")
+    let thickness1 = NSLocalizedString("Thickness 1", comment: "")
+    let thickness2 = NSLocalizedString("Thickness 2", comment: "")
+    let thickness3 = NSLocalizedString("Thickness 3", comment: "")
+    let thickness4 = NSLocalizedString("Thickness 4", comment: "")
+    let thickness5 = NSLocalizedString("Thickness 5", comment: "")
+    let thickness6 = NSLocalizedString("Thickness 6", comment: "")
+    let thickness7 = NSLocalizedString("Thickness 7", comment: "")
+    let thickness8 = NSLocalizedString("Thickness 8", comment: "")
+    let thickness9 = NSLocalizedString("Thickness 9", comment: "")
+    let thickness10 = NSLocalizedString("Thickness 10", comment: "")
+    let pickColor = NSLocalizedString("Pick Color", comment: "")
+    let selectedColor = NSLocalizedString("Pick Color: ", comment: "")
+    let openCanvasWindow = NSLocalizedString("Open Canvas Window", comment: "")
+    let openColorPanel = NSLocalizedString("Open Color Panel", comment: "")
+    let openToolWindow = NSLocalizedString("Open Tool Window", comment: "")
+    let bringCanvasToFront = NSLocalizedString("Bring Canvas to Front", comment: "")
+    let bringColorPanelToFront = NSLocalizedString("Bring Color Panel to Front", comment: "")
+    let bringToolWindowToFront = NSLocalizedString("Bring Tool Window to Front", comment: "")
+    let enlargeSize = NSLocalizedString("Enlarge Canvas Size", comment: "")
+    let shrinkSize = NSLocalizedString("Shrink Canvas Size", comment: "")
 
-    // MARK: Body
+    
     var body: some Scene {
         Group {
             Window("Canvas", id: "canvas") {
@@ -65,28 +65,17 @@ struct ApplePaintApp: App {
                         }
                         DispatchQueue.main.async {
                             openWindow(id: "canvas")
-                            openWindow(id: "tools")
                         }
                     }
             }
             .windowStyle(.hiddenTitleBar)
             .windowToolbarStyle(.unified)
             .windowResizability(.contentSize)
-            Window("Tools", id: "tools") {
-                ToolView()
-                    .environmentObject(appCanvas)
-                    .environmentObject(appSetter)
-                    .background(Color.clear)
-                    .edgesIgnoringSafeArea(.all)
-            }
-            .windowStyle(.hiddenTitleBar)
-            .windowToolbarStyle(.unified)
-            .windowResizability(.contentSize)
         }
         .commands {
-            // MARK: Command
+            
             CommandGroup(replacing: .newItem) {}
-            // MARK: UndoRedo
+            
             CommandGroup(replacing: .undoRedo) {
                 Button(
                     action: {
@@ -114,7 +103,7 @@ struct ApplePaintApp: App {
                         if appCanvas.isErasing{
                             appSetter.showToast(message: enableEraser)
                         }else{
-                            appSetter.showToast(message: unenableEraser)
+                            appSetter.showToast(message: disableEraser)
                         }
                     },
                     label: {
@@ -171,7 +160,7 @@ struct ApplePaintApp: App {
                 ).keyboardShortcut("r", modifiers: .option)
 
             }
-            // MARK: Pasteboard
+            
             CommandGroup(replacing: .pasteboard) {
                 Menu(thickness) {
                     Button(
@@ -329,7 +318,7 @@ struct ApplePaintApp: App {
                     ).keyboardShortcut("5", modifiers: .option)
                 }
             }
-            // MARK: Sidebar
+            
             CommandGroup(before: .sidebar) {
                 Button(
                     action: {
@@ -359,7 +348,7 @@ struct ApplePaintApp: App {
                     }
                 ).keyboardShortcut("t", modifiers: .command)
             }
-            // MARK: Window
+            
             CommandGroup(before: .windowArrangement) {
 
                 Button(
@@ -425,7 +414,7 @@ struct ApplePaintApp: App {
                 ).keyboardShortcut("-", modifiers: .command)
             }
         }
-        // MARK: Settings
+        
         Settings {
             SettingView()
                 .environmentObject(appSetter)

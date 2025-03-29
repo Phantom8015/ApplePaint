@@ -10,31 +10,29 @@ import SwiftUI
 struct SettingView: View {
 
     @EnvironmentObject var appSetter: AppSetter
-    // MARK: Body
     var body: some View {
         LazyVStack {
-            // Top
             VStack(alignment: .leading) {
-                Text(NSLocalizedString("Tool", comment: "工具"))
+                Text(NSLocalizedString("Tool", comment: ""))
                     .fontWeight(.bold).font(.subheadline)
                     .foregroundColor(Color.gray)
                     .padding(.leading, 8)
                 VStack {
                     Toggles(
                         label: NSLocalizedString(
-                            "Hidden UndoRedo", comment: "隐藏 撤回按钮组"),
+                            "Hide Undo Redo", comment: ""),
                         action: $appSetter.hiddenUndoRedoTool)
                     Toggles(
                         label: NSLocalizedString(
-                            "Hidden Eraser", comment: "隐藏 橡皮擦"),
+                            "Hide Eraser", comment: ""),
                         action: $appSetter.hiddenEraserTool)
                     Toggles(
                         label: NSLocalizedString(
-                            "Hidden Clear Tool", comment: "隐藏清空"),
+                            "Hide Clear Tool", comment: ""),
                         action: $appSetter.hiddenClearTool)
                     Toggles(
                         label: NSLocalizedString(
-                            "Hidden BackGroud Tool", comment: "隐藏背景"),
+                            "Hide Backgroud Tool", comment: ""),
                         action: $appSetter.hiddenBackgroudTool)
                 }
                 .padding(8)

@@ -13,7 +13,7 @@ class ColorPanelDelegate: NSObject {
     private var newColor: Color?
     private var colorAddingWorkItem: DispatchWorkItem?
 
-    // MARK: 打开系统颜色选择面板
+    
     func openPanel() {
         let colorPanel = NSColorPanel.shared
         colorPanel.setTarget(self)
@@ -22,7 +22,7 @@ class ColorPanelDelegate: NSObject {
         colorPanel.makeKeyAndOrderFront(nil)
     }
 
-    // MARK: 添加颜色
+    
     @objc func colorPanelDidChangeColor(_ sender: NSColorPanel) {
         newColor = Color(nsColor: sender.color)
         if let newColor = newColor {
@@ -37,17 +37,17 @@ class ColorPanelDelegate: NSObject {
                     AppCanvas.shared.selectedColor = newColor
                     AppSetter.shared.showToast(
                         message: NSLocalizedString(
-                            "Color Already Exist", comment: "颜色已存在")
+                            "Color Already Exist", comment: "")
                             + ":    "
                             + newColor.toHex()
                             + "  "
-                            + NSLocalizedString("Selected", comment: "已选择"))
+                            + NSLocalizedString("Selected", comment: ""))
                 } else {
                     // 暂时添加颜色
                     AppCanvas.shared.customizeColor.append(newColor)
                     AppSetter.shared.showToast(
                         message: NSLocalizedString(
-                            "Temporarily Add Color", comment: "暂时添加颜色")
+                            "Temporarily Add Color", comment: "")
                             + ":    "
                             + newColor.toHex())
                 }

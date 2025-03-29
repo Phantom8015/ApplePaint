@@ -13,21 +13,14 @@ struct ToolItemView: View {
     @EnvironmentObject var appSetter: AppSetter
     @State private var showBackgroud = false
     @State private var showLineWidthPicker = false
-    // MARK: Body
+    
     var body: some View {
-        VStack(spacing: 16) {
-            Circle()
-                .fill(Color.clear)
-                .frame(width: 20, height: 20)
-                .overlay {
-                    Circle().fill(appCanvas.selectedColor)
-                        .frame(width: appSetter.lineWidth)
-                }
-            VStack {
+        VStack(spacing: 24) {
+            VStack(spacing: 24) {
                 Image(systemName: "scribble.variable")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 16, height: 16)
                     .foregroundColor(.accentColor)
                     .onHover { _ in appSetter.hoverHandler(target: .Thickness) }
                     .popover(
@@ -53,25 +46,25 @@ struct ToolItemView: View {
                     Image(systemName: "arrow.uturn.backward")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(.accentColor)
                         .onTapGesture {
                             appCanvas.undo()
                             appSetter.showToast(
                                 message: NSLocalizedString(
-                                    "Undo", comment: "撤销"))
+                                    "Undo", comment: "Undo"))
                         }
 
                     Image(systemName: "arrow.uturn.forward")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(.accentColor)
                         .onTapGesture {
                             appCanvas.redo()
                             appSetter.showToast(
                                 message: NSLocalizedString(
-                                    "Redo", comment: "取消撤销"))
+                                    "Redo", comment: "Redo"))
                         }
                 }
 
@@ -79,7 +72,7 @@ struct ToolItemView: View {
                     Image(systemName: "eraser")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(
                             appCanvas.isErasing ? .red : .accentColor
                         )
@@ -88,11 +81,11 @@ struct ToolItemView: View {
                             if appCanvas.isErasing {
                                 appSetter.showToast(
                                     message: NSLocalizedString(
-                                        "Enable Eraser", comment: "打开橡皮擦"))
+                                        "Enable Eraser", comment: "Enable Eraser"))
                             } else {
                                 appSetter.showToast(
                                     message: NSLocalizedString(
-                                        "Unenable Eraser", comment: "关闭橡皮擦"))
+                                        "Disable Eraser", comment: "Disable Eraser"))
                             }
                         }
                 }
@@ -101,7 +94,7 @@ struct ToolItemView: View {
                     Image(systemName: "trash")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(.red)
                         .onTapGesture {
                             appCanvas.paths = []
@@ -109,7 +102,7 @@ struct ToolItemView: View {
                             appCanvas.currentPoints = []
                             appSetter.showToast(
                                 message: NSLocalizedString(
-                                    "Clear All", comment: "清空画布"))
+                                    "Clear All", comment: "Clear All"))
                         }
                 }
 
@@ -117,7 +110,7 @@ struct ToolItemView: View {
                     Image(systemName: "apple.image.playground")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(.accentColor)
                         .onHover { _ in
                             appSetter.hoverHandler(target: .Backgroud)

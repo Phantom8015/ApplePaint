@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Color {
     
-    // MARK: init hex 到 Color
+    
     init(hex: String) {
         var hexSanitized: String
         if hex.contains("#") {
@@ -28,7 +28,7 @@ extension Color {
         self.init(red: r, green: g, blue: b)
     }
     
-    // MARK: 获取 hex
+    
     func toHex() -> String {
         guard let components = self.cgColor?.components else {
             return "#000000"
@@ -52,7 +52,7 @@ extension Color {
         return "#000000"
     }
 
-    // MARK: 获取相反色（补色）
+    
     func opposite() -> Color {
         
         let ciColor = CIColor(color: NSColor(self))!

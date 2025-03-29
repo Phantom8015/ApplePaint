@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AB117252D96DD5700379E69 /* Untitled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB117242D96DD4B00379E69 /* Untitled.swift */; };
 		5AB594BC2D96B81E000856A1 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB594BB2D96B81E000856A1 /* AlertToast */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5AB117242D96DD4B00379E69 /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
 		A01FF8272D2B364100E56EBB /* ApplePaint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePaint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01FF8382D2B364300E56EBB /* ApplePaintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePaintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01FF8422D2B364300E56EBB /* ApplePaintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePaintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +83,6 @@
 		A01FF81E2D2B364100E56EBB = {
 			isa = PBXGroup;
 			children = (
-				5AB117242D96DD4B00379E69 /* Untitled.swift */,
 				A01FF8292D2B364100E56EBB /* ApplePaint */,
 				A01FF8282D2B364100E56EBB /* Products */,
 			);
@@ -244,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AB117252D96DD5700379E69 /* Untitled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

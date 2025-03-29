@@ -8,7 +8,7 @@
 import AppKit
 import UniformTypeIdentifiers
 
-// MARK: 选择文件
+
 func selectFile(type: [UTType]) -> URL? {
     let panel = NSOpenPanel()
     panel.allowedContentTypes = type

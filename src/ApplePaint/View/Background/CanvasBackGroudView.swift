@@ -20,24 +20,24 @@ struct CanvasBackGroudView: View {
         NSImage(named: .blackboard4)!,
     ]
 
-    // MARK: Body
+    
     var body: some View {
         VStack {
             Picker("", selection: $appSetter.canvasBackground) {
                 Text(
                     NSLocalizedString(
-                        "visualEffectBlur", comment: "视觉效果模糊")
+                        "Acrylic", comment: "")
                 ).tag(CanvasBackground.VisualEffectBlur).padding(.vertical)
                 Text(
-                    NSLocalizedString("colorful", comment: "颜色")
+                    NSLocalizedString("colorful", comment: "")
                 ).tag(CanvasBackground.Colorful)
                 Text(
                     NSLocalizedString(
-                        "picture", comment: "照片")
+                        "Picture", comment: "")
                 ).tag(CanvasBackground.Picture)
                 Text(
                     NSLocalizedString(
-                        "customize", comment: "自定义照片")
+                        "Customize", comment: "")
                 ).tag(CanvasBackground.Customize)
             }.pickerStyle(.segmented).labelsHidden().padding(.horizontal, 8)
                 .padding(.vertical, 8)
@@ -53,7 +53,7 @@ struct CanvasBackGroudView: View {
             }
         }
     }
-    // MARK: 返回颜色视图
+    
     private func returnColorful() -> some View {
         return VStack {
             LazyVGrid(columns: columns) {
@@ -71,11 +71,11 @@ struct CanvasBackGroudView: View {
             }
         }
     }
-    // Mark: 选择颜色
+    
     private func chooseColor(color: Color) {
         appSetter.colorBackgourd = color.toHex()
     }
-    // MARK: 返回图片视图
+    
     private func returnPicture() -> some View {
         return VStack {
             LazyVGrid(columns: columns, spacing: 4) {
@@ -97,16 +97,16 @@ struct CanvasBackGroudView: View {
         }
     }
 
-    // MARK: 选择 app 内置图片
+    
     private func choosePicture(picture: String) {
         appSetter.pictureBackgroud = picture
     }
-    // MARK: 返回自定义图片视图
+    
     private func returnCustomize() -> some View {
         return VStack {
             Toggles(
                 label: NSLocalizedString(
-                    "Scaled to Fill", comment: "缩放至填充"),
+                    "Scaled to Fill", comment: ""),
                 action: $appSetter.scaledToFill).padding(.horizontal, 16)
             RoundedRectangle(cornerRadius: 8)
                 .fill(.gray.opacity(0.2))
@@ -131,7 +131,7 @@ struct CanvasBackGroudView: View {
                 }
         }
     }
-    // MARK: 选择并保存图片
+    
     private func selectedPicture() {
         if let file = selectFile(type: [.image]) {
             if let imageData = try? Data(contentsOf: file) {
