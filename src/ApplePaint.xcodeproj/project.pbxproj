@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5AB117252D96DD5700379E69 /* Untitled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB117242D96DD4B00379E69 /* Untitled.swift */; };
+		5AB594BC2D96B81E000856A1 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB594BB2D96B81E000856A1 /* AlertToast */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A01FF8392D2B364300E56EBB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,14 +29,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5AB117242D96DD4B00379E69 /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
 		A01FF8272D2B364100E56EBB /* ApplePaint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePaint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01FF8382D2B364300E56EBB /* ApplePaintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePaintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01FF8422D2B364300E56EBB /* ApplePaintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePaintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5A0978492D944C7D0072F87E /* Exceptions for "ApplePaint" folder in "ApplePaint" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			platformFiltersByRelativePath = {
+				View/CanvasView.swift = (macos, );
+			};
+			target = A01FF8262D2B364100E56EBB /* ApplePaint */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A01FF8292D2B364100E56EBB /* ApplePaint */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5A0978492D944C7D0072F87E /* Exceptions for "ApplePaint" folder in "ApplePaint" target */,
+			);
 			path = ApplePaint;
 			sourceTree = "<group>";
 		};
@@ -42,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB594BC2D96B81E000856A1 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +85,7 @@
 		A01FF81E2D2B364100E56EBB = {
 			isa = PBXGroup;
 			children = (
+				5AB117242D96DD4B00379E69 /* Untitled.swift */,
 				A01FF8292D2B364100E56EBB /* ApplePaint */,
 				A01FF8282D2B364100E56EBB /* Products */,
 			);
@@ -100,6 +121,7 @@
 			);
 			name = ApplePaint;
 			packageProductDependencies = (
+				5AB594BB2D96B81E000856A1 /* AlertToast */,
 			);
 			productName = ApplePaint;
 			productReference = A01FF8272D2B364100E56EBB /* ApplePaint.app */;
@@ -174,9 +196,13 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = A01FF81E2D2B364100E56EBB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5AB594BA2D96B81E000856A1 /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A01FF8282D2B364100E56EBB /* Products */;
 			projectDirPath = "";
@@ -218,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB117252D96DD5700379E69 /* Untitled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +337,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -366,6 +394,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};
@@ -375,14 +404,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ApplePaint/ApplePaint.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ApplePaint/Preview Content\"";
-				DEVELOPMENT_TEAM = R9F8NG6CSP;
+				DEVELOPMENT_TEAM = 5F44TASM2Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ApplePaint;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,14 +435,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ApplePaint/ApplePaint.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ApplePaint/Preview Content\"";
-				DEVELOPMENT_TEAM = R9F8NG6CSP;
+				DEVELOPMENT_TEAM = 5F44TASM2Z;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ApplePaint;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -431,9 +464,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R9F8NG6CSP;
+				DEVELOPMENT_TEAM = 5F44TASM2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -449,9 +483,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R9F8NG6CSP;
+				DEVELOPMENT_TEAM = 5F44TASM2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -466,9 +501,10 @@
 		A01FF8532D2B364300E56EBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R9F8NG6CSP;
+				DEVELOPMENT_TEAM = 5F44TASM2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phantom8015.me.ApplePaintUITests;
@@ -482,9 +518,10 @@
 		A01FF8542D2B364300E56EBB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R9F8NG6CSP;
+				DEVELOPMENT_TEAM = 5F44TASM2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phantom8015.me.ApplePaintUITests;
@@ -535,6 +572,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5AB594BA2D96B81E000856A1 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5AB594BB2D96B81E000856A1 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AB594BA2D96B81E000856A1 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A01FF81F2D2B364100E56EBB /* Project object */;
 }

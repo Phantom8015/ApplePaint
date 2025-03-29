@@ -1,0 +1,866 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    "Add Color Perpetual" : {
+      "comment" : "添加颜色",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Color Perpetual"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加颜色"
+          }
+        }
+      }
+    },
+    "Bring Canvas to Front" : {
+      "comment" : "置顶画布",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bring Canvas to Front"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "置顶画布"
+          }
+        }
+      }
+    },
+    "Bring Color Panel to Front" : {
+      "comment" : "置顶颜色面板",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bring Color Panel to Front"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "置顶颜色面板"
+          }
+        }
+      }
+    },
+    "Bring Tool Window to Front" : {
+      "comment" : "置顶工具面板",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bring Tool Window to Front"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "置顶工具面板"
+          }
+        }
+      }
+    },
+    "Bring Window to Front" : {
+      "comment" : "置顶窗口",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bring Window to Front"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "置顶窗口"
+          }
+        }
+      }
+    },
+    "Canvas" : {
+      "shouldTranslate" : false
+    },
+    "ChooseThickness" : {
+      "comment" : "选择画笔粗细",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose Thickness"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择画笔粗细"
+          }
+        }
+      }
+    },
+    "Clear All" : {
+      "comment" : "清空画布",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear Canvas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清空画布"
+          }
+        }
+      }
+    },
+    "Color Already Exist" : {
+      "comment" : "颜色已存在",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color Already Exist"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "颜色已存在"
+          }
+        }
+      }
+    },
+    "Color RollBack" : {
+      "comment" : "上一个颜色",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color RollBack"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上一个颜色"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "colorful" : {
+      "comment" : "颜色",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colorful"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "颜色"
+          }
+        }
+      }
+    },
+    "Copy Color" : {
+      "comment" : "拷贝颜色 Hex",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy Color Hex"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "拷贝颜色 Hex"
+          }
+        }
+      }
+    },
+    "customize" : {
+      "comment" : "自定义照片",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom Picture"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自定义照片"
+          }
+        }
+      }
+    },
+    "Decoding failed: " : {
+      "comment" : "解码失败",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decoding failed: "
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解码失败"
+          }
+        }
+      }
+    },
+    "Double Mouse Click Color" : {
+      "comment" : "双击任一颜色",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double Click Color"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "双击任一颜色"
+          }
+        }
+      }
+    },
+    "Enable Eraser" : {
+      "comment" : "打开橡皮擦",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable Eraser"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开橡皮擦"
+          }
+        }
+      }
+    },
+    "Encoding failed" : {
+      "comment" : "编码失败: ",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encoding failed"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "编码失败: "
+          }
+        }
+      }
+    },
+    "Enlarge Canvas Size" : {
+      "comment" : "放大画布",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enlarge Canvas Size"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "放大画布"
+          }
+        }
+      }
+    },
+    "Eraser" : {
+      "comment" : "橡皮擦",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eraser"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "橡皮擦"
+          }
+        }
+      }
+    },
+    "Hidden BackGroud Tool" : {
+      "comment" : "隐藏背景",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden BackGroud Tool"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏背景"
+          }
+        }
+      }
+    },
+    "Hidden Clear Tool" : {
+      "comment" : "隐藏清空",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden Clear Tool"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏清空按钮"
+          }
+        }
+      }
+    },
+    "Hidden Eraser" : {
+      "comment" : "隐藏 橡皮擦",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden Eraser"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏 橡皮擦"
+          }
+        }
+      }
+    },
+    "Hidden UndoRedo" : {
+      "comment" : "隐藏 撤回按钮组",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden UndoRedo"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏 撤回按钮组"
+          }
+        }
+      }
+    },
+    "Open Canvas Window" : {
+      "comment" : "打开画布",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Canvas Window"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开画布"
+          }
+        }
+      }
+    },
+    "Open Color Panel" : {
+      "comment" : "打开颜色面板",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Color Panel"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开颜色面板"
+          }
+        }
+      }
+    },
+    "Open Tool Window" : {
+      "comment" : "打开工具面板",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Tool Window"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开工具面板"
+          }
+        }
+      }
+    },
+    "Pick Color" : {
+      "comment" : "选择颜色",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick Color"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择颜色"
+          }
+        }
+      }
+    },
+    "Pick Color: " : {
+      "comment" : "选择颜色:",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick Color: "
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择颜色:"
+          }
+        }
+      }
+    },
+    "picture" : {
+      "comment" : "照片",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Picture"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "照片"
+          }
+        }
+      }
+    },
+    "Redo" : {
+      "comment" : "取消撤销",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redo"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消撤销"
+          }
+        }
+      }
+    },
+    "Remove Color" : {
+      "comment" : "删除颜色",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove Color"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除颜色"
+          }
+        }
+      }
+    },
+    "Right Click for More Features" : {
+      "comment" : "更多功能 右键任一颜色",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Right Click Color for More Features"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多功能 右键任一颜色"
+          }
+        }
+      }
+    },
+    "Scaled to Fill" : {
+      "comment" : "缩放至填充",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scaled to Fill"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缩放至填充"
+          }
+        }
+      }
+    },
+    "Selected" : {
+      "comment" : "已选择",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已选择"
+          }
+        }
+      }
+    },
+    "Shrink Canvas Size" : {
+      "comment" : "缩小画布",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shrink Canvas Size"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缩小画布"
+          }
+        }
+      }
+    },
+    "Temporarily Add Color" : {
+      "comment" : "暂时添加颜色",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temporarily Add Color"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暂时添加颜色"
+          }
+        }
+      }
+    },
+    "Thickness" : {
+      "comment" : "画笔粗细",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画笔粗细"
+          }
+        }
+      }
+    },
+    "Thickness 1" : {
+      "comment" : "1 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 1"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 像素"
+          }
+        }
+      }
+    },
+    "Thickness 2" : {
+      "comment" : "2 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 2"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 像素"
+          }
+        }
+      }
+    },
+    "Thickness 3" : {
+      "comment" : "3 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 3"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 像素"
+          }
+        }
+      }
+    },
+    "Thickness 4" : {
+      "comment" : "4 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 4"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4 像素"
+          }
+        }
+      }
+    },
+    "Thickness 5" : {
+      "comment" : "5 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 5"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 像素"
+          }
+        }
+      }
+    },
+    "Thickness 6" : {
+      "comment" : "6 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 6"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6 像素"
+          }
+        }
+      }
+    },
+    "Thickness 7" : {
+      "comment" : "7 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 7"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7 像素"
+          }
+        }
+      }
+    },
+    "Thickness 8" : {
+      "comment" : "8 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 8"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "8 像素"
+          }
+        }
+      }
+    },
+    "Thickness 9" : {
+      "comment" : "9 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 9"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "9 像素"
+          }
+        }
+      }
+    },
+    "Thickness 10" : {
+      "comment" : "10 像素",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thickness 10"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 像素"
+          }
+        }
+      }
+    },
+    "Tool" : {
+      "comment" : "工具",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tool"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "工具"
+          }
+        }
+      }
+    },
+    "Tools" : {
+      "shouldTranslate" : false
+    },
+    "Undo" : {
+      "comment" : "撤销",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Undo"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "撤销"
+          }
+        }
+      }
+    },
+    "Unenable Eraser" : {
+      "comment" : "关闭橡皮擦",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unenable Eraser"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭橡皮擦"
+          }
+        }
+      }
+    },
+    "visualEffectBlur" : {
+      "comment" : "视觉效果模糊",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VisualEffectBlur"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "视觉效果模糊"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
