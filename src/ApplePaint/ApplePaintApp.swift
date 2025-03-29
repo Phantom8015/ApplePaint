@@ -338,15 +338,6 @@ struct ApplePaintApp: App {
                         Text(openColorPanel)
                     }
                 ).keyboardShortcut("f", modifiers: .command)
-                Button(
-                    action: {
-                        openWindow(id: "tools")
-                        appSetter.showToast(message: openToolWindow)
-                    },
-                    label: {
-                        Text(openToolWindow)
-                    }
-                ).keyboardShortcut("t", modifiers: .command)
             }
             
             CommandGroup(before: .windowArrangement) {

@@ -60,10 +60,6 @@ struct CanvasView: View {
                                     + NSLocalizedString(
                                         "Open Color Panel", comment: ""))
                             Texts(
-                                label: " ⌘ t  "
-                                    + NSLocalizedString(
-                                        "Open Tool Window", comment: ""))
-                            Texts(
                                 label: " ⌥ 1 ... 5  to "
                                     + NSLocalizedString(
                                         "Pick Color", comment: ""))
