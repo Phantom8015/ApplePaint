@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.ibb.co/mr9Zv5PS/Apple-Paint.png" width="150" height="150"/>
+<img src="https://raw.githubusercontent.com/Phantom8015/ApplePaint/refs/heads/main/ApplePaint.png" width="150" height="150"/>
 <p>
 <h1 align="center">ApplePaint</h1>
 <p align="center">
