@@ -1,3 +1,9 @@
+<p align="center">
+<img src="https://i.ibb.co/mr9Zv5PS/Apple-Paint.png" width="150" height="150"/>
+<p>
+<h1 align="center">ApplePaint</h1>
+<p align="center">
+
 # ApplePaint
 
 ApplePaint is a simple, interactive drawing app built using SwiftUI. It allows users to create drawings using various colors, line widths, and even erase their work. The app includes an easy-to-use interface with intuitive touch gestures for drawing, undoing, and redoing actions. Users can also pick colors using a color picker and adjust the line thickness to suit their preferences.
