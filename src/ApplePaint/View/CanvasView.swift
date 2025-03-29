@@ -75,7 +75,7 @@ struct CanvasView: View {
                                     + NSLocalizedString(
                                         "Clear All", comment: ""))
                             Texts(
-                                label: " ⌘ 1 ... 3  "
+                                label: " ⌘ 1 ... 2  "
                                     + NSLocalizedString(
                                         "Bring Window to Front", comment: ""))
                         }.frame(width: 320)

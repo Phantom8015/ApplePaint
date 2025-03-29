@@ -73,7 +73,6 @@ ApplePaint is a simple, interactive drawing app built using SwiftUI. It allows u
 - ⌘ C (Command+C) - Open Canvas Window
 - ⌘ 1 (Command+1) - Bring Canvas to Front
 - ⌘ 2 (Command+2) - Bring Color Panel to Front
-- ⌘ 3 (Command+3) - Bring Tool Window to Front
 
 #### Canvas Size
 - ⌘ = (Command+=) - Enlarge Canvas Size

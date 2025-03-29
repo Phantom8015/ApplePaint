@@ -60,6 +60,7 @@
     },
     "Bring Tool Window to Front" : {
       "comment" : "置顶工具面板",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -445,6 +446,7 @@
     },
     "Open Tool Window" : {
       "comment" : "打开工具面板",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

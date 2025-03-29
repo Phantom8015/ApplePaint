@@ -40,10 +40,8 @@ struct ApplePaintApp: App {
     let selectedColor = NSLocalizedString("Pick Color: ", comment: "")
     let openCanvasWindow = NSLocalizedString("Open Canvas Window", comment: "")
     let openColorPanel = NSLocalizedString("Open Color Panel", comment: "")
-    let openToolWindow = NSLocalizedString("Open Tool Window", comment: "")
     let bringCanvasToFront = NSLocalizedString("Bring Canvas to Front", comment: "")
     let bringColorPanelToFront = NSLocalizedString("Bring Color Panel to Front", comment: "")
-    let bringToolWindowToFront = NSLocalizedString("Bring Tool Window to Front", comment: "")
     let enlargeSize = NSLocalizedString("Enlarge Canvas Size", comment: "")
     let shrinkSize = NSLocalizedString("Shrink Canvas Size", comment: "")
 
@@ -366,23 +364,6 @@ struct ApplePaintApp: App {
                         Text(bringColorPanelToFront)
                     }
                 ).keyboardShortcut("2", modifiers: .command)
-
-                Button(
-                    action: {
-                        if let window = NSApplication.shared.windows.first(
-                            where: { $0.identifier?.rawValue == "tools" })
-                        {
-                            window.orderFront(nil)
-                            window.makeKeyAndOrderFront(nil)
-                        }
-                        appSetter.showToast(message: bringToolWindowToFront)
-                    },
-                    label: {
-                        Text(bringToolWindowToFront)
-                    }
-                ).keyboardShortcut("3", modifiers: .command)
-
-                Divider()
 
                 Button(
                     action: {
