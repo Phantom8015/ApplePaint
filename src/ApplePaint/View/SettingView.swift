@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingView: View {
 
     @EnvironmentObject var appSetter: AppSetter
+    
     var body: some View {
         LazyVStack {
             VStack(alignment: .leading) {

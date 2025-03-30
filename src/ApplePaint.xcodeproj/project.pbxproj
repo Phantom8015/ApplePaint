@@ -41,13 +41,18 @@
 		5A0978492D944C7D0072F87E /* Exceptions for "ApplePaint" folder in "ApplePaint" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			platformFiltersByRelativePath = {
-				View/CanvasView.swift = (macos, );
+				View/Canvas/CanvasView.swift = (macos, );
 			};
 			target = A01FF8262D2B364100E56EBB /* ApplePaint */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5AC76A6E2D99795900EF11BD /* Documents */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Documents;
+			sourceTree = "<group>";
+		};
 		A01FF8292D2B364100E56EBB /* ApplePaint */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -87,6 +92,7 @@
 		A01FF81E2D2B364100E56EBB = {
 			isa = PBXGroup;
 			children = (
+				5AC76A6E2D99795900EF11BD /* Documents */,
 				5ABDEF1D2D97E6E700352BCF /* Info.plist */,
 				5ABDEF182D97D9EC00352BCF /* .gitignore */,
 				A01FF8292D2B364100E56EBB /* ApplePaint */,
@@ -120,6 +126,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				5AC76A6E2D99795900EF11BD /* Documents */,
 				A01FF8292D2B364100E56EBB /* ApplePaint */,
 			);
 			name = ApplePaint;

@@ -10,10 +10,11 @@ class ColorPanelDelegate: NSObject {
 
     static var shared = ColorPanelDelegate()
 
+    // MARK: Properties
     private var newColor: Color?
     private var colorAddingWorkItem: DispatchWorkItem?
 
-    
+    // MARK: Open Color Panel
     func openPanel() {
         let colorPanel = NSColorPanel.shared
         colorPanel.setTarget(self)
@@ -22,8 +23,8 @@ class ColorPanelDelegate: NSObject {
         colorPanel.makeKeyAndOrderFront(nil)
     }
 
-    
-    @objc func colorPanelDidChangeColor(_ sender: NSColorPanel) {
+    // MARK: NSColorPanel
+    @objc private func colorPanelDidChangeColor(_ sender: NSColorPanel) {
         newColor = Color(nsColor: sender.color)
         if let newColor = newColor {
             AppCanvas.shared.previousColor = AppCanvas.shared.selectedColor
@@ -57,5 +58,4 @@ class ColorPanelDelegate: NSObject {
                 deadline: .now() + 0.6, execute: workItem)
         }
     }
-
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: Toggle
 struct Toggles: View {
     let label: String
     @Binding var action: Bool
@@ -21,7 +22,7 @@ struct Toggles: View {
     }
 }
 
-// MARK: Texts 组件
+// MARK: Texts
 struct Texts:View {
     let label:String
     var body: some View {
