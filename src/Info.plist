@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>UTExportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeConformsTo</key>
+            <array>
+                <string>public.data</string>
+                <string>public.content</string>
+            </array>
+            <key>UTTypeDescription</key>
+            <string>ApplePaint Canvas</string>
+            <key>UTTypeIconFile</key>
+            <string>paint.icns</string>
+            <key>UTTypeIdentifier</key>
+            <string>com.applePaint.canvas</string>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array>
+                    <string>paint</string>
+                </array>
+                <key>public.mime-type</key>
+                <array>
+                    <string>application/x-applepaint</string>
+                </array>
+            </dict>
+        </dict>
+    </array>
+
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeIconFile</key>
+            <string>paint.icns</string>
+            <key>CFBundleTypeName</key>
+            <string>ApplePaint Canvas</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Owner</string>
+            <key>LSIsAppleDefaultForType</key>
+            <true/>
+            <key>NSDocumentClass</key>
+            <string>NSDocument</string>
+            <key>LSItemContentTypes</key>
+            <array>
+                <string>com.applePaint.canvas</string>
+            </array>
+            <key>NSUbiquitousDocumentUserActivityType</key>
+            <string>com.applePaint.canvas-editing</string>
+        </dict>
+    </array>
+</dict>
+</plist>

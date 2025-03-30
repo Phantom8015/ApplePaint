@@ -15,7 +15,8 @@ struct ApplePaintApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var appCanvas = AppCanvas.shared
     @StateObject var appSetter = AppSetter.shared
-    
+
+    let export = NSLocalizedString("Export As", comment: "")
     let undo = NSLocalizedString("Undo", comment: "")
     let redo = NSLocalizedString("Redo", comment: "")
     let eraser = NSLocalizedString("Eraser", comment: "")
@@ -23,7 +24,6 @@ struct ApplePaintApp: App {
     let disableEraser = NSLocalizedString("Disable Eraser", comment: "")
     let clearAll = NSLocalizedString("Clear All", comment: "")
     let colorRollBack = NSLocalizedString("Color RollBack", comment: "")
-    let addColorPerpetual = NSLocalizedString("Add Color Perpetual", comment: "")
     let removeColor = NSLocalizedString("Remove Color", comment: "")
     let thickness = NSLocalizedString("Thickness", comment: "")
     let thickness1 = NSLocalizedString("Thickness 1", comment: "")
@@ -40,12 +40,14 @@ struct ApplePaintApp: App {
     let selectedColor = NSLocalizedString("Pick Color: ", comment: "")
     let openCanvasWindow = NSLocalizedString("Open Canvas Window", comment: "")
     let openColorPanel = NSLocalizedString("Open Color Panel", comment: "")
-    let bringCanvasToFront = NSLocalizedString("Bring Canvas to Front", comment: "")
-    let bringColorPanelToFront = NSLocalizedString("Bring Color Panel to Front", comment: "")
+    let bringCanvasToFront = NSLocalizedString(
+        "Bring Canvas to Front", comment: "")
+    let bringColorPanelToFront = NSLocalizedString(
+        "Bring Color Panel to Front", comment: "")
     let enlargeSize = NSLocalizedString("Enlarge Canvas Size", comment: "")
     let shrinkSize = NSLocalizedString("Shrink Canvas Size", comment: "")
 
-    
+    // MARK: Body
     var body: some Scene {
         Group {
             Window("Canvas", id: "canvas") {
@@ -55,7 +57,8 @@ struct ApplePaintApp: App {
                     .edgesIgnoringSafeArea(.all)
                     .toast(isPresenting: $appSetter.showToast) {
                         AlertToast(
-                            displayMode: .hud, type: .regular, title: appSetter.toastMessage)
+                            displayMode: .hud, type: .regular,
+                            title: appSetter.toastMessage)
                     }
                     .onAppear {
                         let _ = NSApplication.shared.windows.map { window in
@@ -71,9 +74,65 @@ struct ApplePaintApp: App {
             .windowResizability(.contentSize)
         }
         .commands {
-            
             CommandGroup(replacing: .newItem) {}
-            
+            // MARK: Save
+            CommandGroup(replacing: .saveItem) {
+                Button(
+                    action: {
+                        saveCanvasFile()
+                        appCanvas.paths = []
+                        appCanvas.currentPoints = []
+                        appCanvas.redoStack = []
+                        appCanvas.fileUrl = nil
+                    },
+                    label: {
+                        Text(NSLocalizedString("New Canvas", comment: "新建画布"))
+                    }
+                ).keyboardShortcut("n", modifiers: .command)
+                Button(
+                    action: {
+                        saveCanvasFile()
+                    },
+                    label: {
+                        Text(NSLocalizedString("Save Canvas", comment: "保存画布"))
+                    }
+                ).keyboardShortcut("s", modifiers: .command)
+                Button(
+                    action: {
+                        openCanvasFile()
+                    },
+                    label: {
+                        Text(NSLocalizedString("Open Canvas", comment: "打开画布"))
+                    }
+                ).keyboardShortcut("o", modifiers: .command)
+                Divider()
+                Button(
+                    action: {
+                        exportPaint(exportFormat: .Png)
+                    },
+                    label: {
+                        Text(export + " Png")
+                    }
+                ).keyboardShortcut("p", modifiers: .command)
+                Button(
+                    action: {
+                        exportPaint(exportFormat: .Jpeg)
+                    },
+                    label: {
+                        Text(export + " Jpeg")
+                    }
+                ).keyboardShortcut("j", modifiers: .command)
+                Button(
+                    action: {
+                        exportPaint(exportFormat: .Tiff)
+                    },
+                    label: {
+                        Text(export + " Tiff")
+                    }
+                ).keyboardShortcut("t", modifiers: .command)
+
+            }
+            // MARK: UndoRedo
             CommandGroup(replacing: .undoRedo) {
                 Button(
                     action: {
@@ -98,14 +157,18 @@ struct ApplePaintApp: App {
                 Button(
                     action: {
                         appCanvas.isErasing.toggle()
-                        if appCanvas.isErasing{
-                            appSetter.showToast(message: enableEraser)
-                        }else{
-                            appSetter.showToast(message: disableEraser)
+                        if appCanvas.isErasing {
+                            appSetter.showToast(
+                                message: NSLocalizedString(
+                                    "Eraser Enabled", comment: "打开橡皮擦"))
+                        } else {
+                            appSetter.showToast(
+                                message: NSLocalizedString(
+                                    "Eraser Disabled", comment: "关闭橡皮擦"))
                         }
                     },
                     label: {
-                        Text(eraser)
+                        Text(NSLocalizedString("Eraser", comment: "橡皮擦"))
                     }
                 ).keyboardShortcut("e", modifiers: .command)
 
@@ -125,7 +188,9 @@ struct ApplePaintApp: App {
                 Button(
                     action: {
                         appCanvas.colorRollback()
-                        appSetter.showToast(message: colorRollBack)
+                        appSetter.showToast(
+                            message: colorRollBack + ": "
+                                + appCanvas.previousColor.toHex())
                     },
                     label: {
                         Text(colorRollBack)
@@ -134,23 +199,27 @@ struct ApplePaintApp: App {
 
                 Button(
                     action: {
-                        appCanvas.setCustomizeColor(color: appCanvas.selectedColor)
-                        appSetter.showToast(message: addColorPerpetual)
+                        appCanvas.setCustomizeColor(
+                            color: appCanvas.selectedColor)
                     },
                     label: {
-                        Text(addColorPerpetual)
+                        Text(
+                            NSLocalizedString(
+                                "Add Color to Favorites", comment: ""))
                     }
                 ).keyboardShortcut("a", modifiers: .option)
 
                 Button(
                     action: {
+                        appSetter.showToast(
+                            message: removeColor + ": "
+                                + appCanvas.selectedColor.toHex())
                         appCanvas.deleteCustomizeColor(
                             color: appCanvas.selectedColor)
                         appCanvas.selectedColor =
                             appCanvas.customizeColor.first
                             ?? appCanvas.tempColor.first
                             ?? appCanvas.baseColor.first!
-                        appSetter.showToast(message: removeColor)
                     },
                     label: {
                         Text(removeColor)
@@ -158,9 +227,9 @@ struct ApplePaintApp: App {
                 ).keyboardShortcut("r", modifiers: .option)
 
             }
-            
+            // MARK: Paste
             CommandGroup(replacing: .pasteboard) {
-                Menu(thickness) {
+                Menu(NSLocalizedString("Thickness", comment: "画笔粗细")) {
                     Button(
                         action: {
                             appSetter.lineWidth = 1
@@ -260,7 +329,9 @@ struct ApplePaintApp: App {
                                 (appCanvas.customizeColor
                                 + appCanvas.tempColor
                                 + appCanvas.baseColor).first!
-                            appSetter.showToast(message: selectedColor + appCanvas.selectedColor.toHex())
+                            appSetter.showToast(
+                                message: selectedColor
+                                    + appCanvas.selectedColor.toHex())
                         },
                         label: {
                             Text(pickColor + "  1")
@@ -272,7 +343,9 @@ struct ApplePaintApp: App {
                                 (appCanvas.customizeColor
                                 + appCanvas.tempColor
                                 + appCanvas.baseColor)[1]
-                            appSetter.showToast(message: selectedColor + appCanvas.selectedColor.toHex())
+                            appSetter.showToast(
+                                message: selectedColor
+                                    + appCanvas.selectedColor.toHex())
                         },
                         label: {
                             Text(pickColor + "  2")
@@ -284,7 +357,9 @@ struct ApplePaintApp: App {
                                 (appCanvas.customizeColor
                                 + appCanvas.tempColor
                                 + appCanvas.baseColor)[2]
-                            appSetter.showToast(message: selectedColor + appCanvas.selectedColor.toHex())
+                            appSetter.showToast(
+                                message: selectedColor
+                                    + appCanvas.selectedColor.toHex())
                         },
                         label: {
                             Text(pickColor + "  3")
@@ -296,7 +371,9 @@ struct ApplePaintApp: App {
                                 (appCanvas.customizeColor
                                 + appCanvas.tempColor
                                 + appCanvas.baseColor)[3]
-                            appSetter.showToast(message: selectedColor + appCanvas.selectedColor.toHex())
+                            appSetter.showToast(
+                                message: selectedColor
+                                    + appCanvas.selectedColor.toHex())
                         },
                         label: {
                             Text(pickColor + "  4")
@@ -308,7 +385,9 @@ struct ApplePaintApp: App {
                                 (appCanvas.customizeColor
                                 + appCanvas.tempColor
                                 + appCanvas.baseColor)[4]
-                            appSetter.showToast(message: selectedColor + appCanvas.selectedColor.toHex())
+                            appSetter.showToast(
+                                message: selectedColor
+                                    + appCanvas.selectedColor.toHex())
                         },
                         label: {
                             Text(pickColor + "  5")
@@ -316,7 +395,7 @@ struct ApplePaintApp: App {
                     ).keyboardShortcut("5", modifiers: .option)
                 }
             }
-            
+            // MARK: Sidebar
             CommandGroup(before: .sidebar) {
                 Button(
                     action: {
@@ -337,9 +416,8 @@ struct ApplePaintApp: App {
                     }
                 ).keyboardShortcut("f", modifiers: .command)
             }
-            
+            // MARK: Window
             CommandGroup(before: .windowArrangement) {
-
                 Button(
                     action: {
                         if let window = NSApplication.shared.windows.first(
@@ -385,11 +463,27 @@ struct ApplePaintApp: App {
                     }
                 ).keyboardShortcut("-", modifiers: .command)
             }
+            // MARK: Commands
+            CommandGroup(before: .windowSize) {
+                Button(
+                    action: {
+                        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+                        if let settingsWindow = NSApp.windows.first(where: { $0.title.contains("Settings") || $0.title.contains("Preferences") }) {
+                            settingsWindow.makeKeyAndOrderFront(nil)
+                        }
+                    },
+                    label: {
+                        Text(NSLocalizedString("Settings", comment: ""))
+                    }
+                ).keyboardShortcut(",", modifiers: .command)
+            }
         }
-        
+        // MARK: Settings
         Settings {
             SettingView()
                 .environmentObject(appSetter)
         }
+        .windowStyle(.titleBar)
+        .windowResizability(.contentSize)
     }
 }

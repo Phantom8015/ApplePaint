@@ -79,15 +79,15 @@ struct ColorView: View {
                                     appCanvas.setCustomizeColor(color: color)
                                     appSetter.showToast(
                                         message: NSLocalizedString(
-                                            "Add Color Perpetual",
+                                            "Add Color to Favorites",
                                             comment: "Add Color")
-                                            + ":    "
-                                            + color.toHex())
+                                        + ":    "
+                                        + color.toHex())
                                 },
                                 label: {
                                     Text(
                                         NSLocalizedString(
-                                            "Add Color Perpetual",
+                                            "Add Color to Favorites",
                                             comment: "Add Color"))
                                 })
                         }

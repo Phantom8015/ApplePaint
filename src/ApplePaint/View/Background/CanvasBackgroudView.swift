@@ -1,5 +1,5 @@
 //
-//  CanvasBackGroudView.swift
+//  CanvasBackgroudView.swift
 //  ApplePaint
 //
 //  Created by NullSilck on 2025/3/28.
@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct CanvasBackGroudView: View {
+struct CanvasBackgroudView: View {
 
     @EnvironmentObject var appSetter: AppSetter
-    let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    // MARK: Properties
+    private let columns = [GridItem(.flexible()), GridItem(.flexible())]
     @State private var selectedImage = NSImage(
         data: AppSetter.shared.customizePicture)
-    let pictures: [NSImage] = [
+    private let pictures: [NSImage] = [
         NSImage(named: .blackboard1)!,
         NSImage(named: .blackboard2)!,
         NSImage(named: .blackboard3)!,
         NSImage(named: .blackboard4)!,
     ]
-
     
     var body: some View {
         VStack {
@@ -54,6 +54,7 @@ struct CanvasBackGroudView: View {
         }
     }
     
+    // MARK: return Color
     private func returnColorful() -> some View {
         return VStack {
             LazyVGrid(columns: columns) {
@@ -65,17 +66,14 @@ struct CanvasBackGroudView: View {
                         .shadow(color: .gray.opacity(0.5), radius: 0.4)
                         .padding(.bottom, 8)
                         .onTapGesture {
-                            chooseColor(color: color)
+                            appSetter.colorBackgourd = color.toHex()
                         }
                 }
             }
         }
     }
     
-    private func chooseColor(color: Color) {
-        appSetter.colorBackgourd = color.toHex()
-    }
-    
+    // MARK: return Picture
     private func returnPicture() -> some View {
         return VStack {
             LazyVGrid(columns: columns, spacing: 4) {
@@ -90,18 +88,14 @@ struct CanvasBackGroudView: View {
                         .shadow(color: .gray.opacity(0.5), radius: 0.4)
                         .padding(.bottom, 8)
                         .onTapGesture {
-                            choosePicture(picture: picture.name() ?? "blackboard1")
+                            appSetter.pictureBackgroud = picture.name() ?? "blackboard1"
                         }
                 }
             }
         }
     }
 
-    
-    private func choosePicture(picture: String) {
-        appSetter.pictureBackgroud = picture
-    }
-    
+    // MARK: return Customize Picture Backgroud
     private func returnCustomize() -> some View {
         return VStack {
             Toggles(
@@ -127,22 +121,19 @@ struct CanvasBackGroudView: View {
                 .shadow(color: .gray.opacity(0.5), radius: 0.4)
                 .padding(.bottom, 8)
                 .onTapGesture {
-                    selectedPicture()
+                    // Select Picture and Save
+                    if let file = selectFile(type: [.image]) {
+                        if let imageData = try? Data(contentsOf: file) {
+                            appSetter.customizePicture = imageData
+                            selectedImage = NSImage(data: appSetter.customizePicture)
+                        }
+                    }
                 }
-        }
-    }
-    
-    private func selectedPicture() {
-        if let file = selectFile(type: [.image]) {
-            if let imageData = try? Data(contentsOf: file) {
-                appSetter.customizePicture = imageData
-                selectedImage = NSImage(data: appSetter.customizePicture)
-            }
         }
     }
 }
 
 #Preview {
-    CanvasBackGroudView()
+    CanvasBackgroudView()
         .environmentObject(AppSetter.shared)
 }

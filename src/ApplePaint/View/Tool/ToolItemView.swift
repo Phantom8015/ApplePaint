@@ -13,7 +13,7 @@ struct ToolItemView: View {
     @EnvironmentObject var appSetter: AppSetter
     @State private var showBackgroud = false
     @State private var showLineWidthPicker = false
-    
+
     var body: some View {
         VStack(spacing: 24) {
             VStack(spacing: 24) {
@@ -22,11 +22,11 @@ struct ToolItemView: View {
                     .scaledToFit()
                     .frame(width: 16, height: 16)
                     .foregroundColor(.accentColor)
-                    .onHover { _ in appSetter.hoverHandler(target: .Thickness) }
-                    .popover(
-                        isPresented: $showLineWidthPicker,
-                        arrowEdge: .leading
-                    ) {
+                    .onHover { _ in
+                        showBackgroud = false
+                        showLineWidthPicker = true
+                    }
+                    .popover(isPresented: $showLineWidthPicker) {
                         HStack {
                             Slider(
                                 value: $appSetter.lineWidth, in: 1...20, step: 1
@@ -34,14 +34,18 @@ struct ToolItemView: View {
                             .frame(width: 240)
                             Text(String(describing: Int(appSetter.lineWidth)))
                                 .frame(width: 24)
-                        }.padding()
-                            .onHover { _ in
-                                appSetter.hoverHandler(target: .Thickness)
-                            }
-                            .onDisappear{
-                                appSetter.showLineWidthPicker = false
-                            }
+                        }
+                        .padding()
+                        .onHover { hovering in
+                            showBackgroud = false
+                            showLineWidthPicker =  hovering
+                        }
+                        .onDisappear {
+                            showLineWidthPicker = false
+                        }
                     }
+                
+                // MARK: Undo Redo
                 if !appSetter.hiddenUndoRedoTool {
                     Image(systemName: "arrow.uturn.backward")
                         .resizable()
@@ -67,7 +71,7 @@ struct ToolItemView: View {
                                     "Redo", comment: "Redo"))
                         }
                 }
-
+                // MARK: Eraser
                 if !appSetter.hiddenEraserTool {
                     Image(systemName: "eraser")
                         .resizable()
@@ -81,15 +85,17 @@ struct ToolItemView: View {
                             if appCanvas.isErasing {
                                 appSetter.showToast(
                                     message: NSLocalizedString(
-                                        "Enable Eraser", comment: "Enable Eraser"))
+                                        "Enable Eraser",
+                                        comment: "Enable Eraser"))
                             } else {
                                 appSetter.showToast(
                                     message: NSLocalizedString(
-                                        "Disable Eraser", comment: "Disable Eraser"))
+                                        "Disable Eraser",
+                                        comment: "Disable Eraser"))
                             }
                         }
                 }
-
+                // MARK: Clear All
                 if !appSetter.hiddenClearTool {
                     Image(systemName: "trash")
                         .resizable()
@@ -105,7 +111,7 @@ struct ToolItemView: View {
                                     "Clear All", comment: "Clear All"))
                         }
                 }
-
+                // MARK: Backgroud
                 if !appSetter.hiddenBackgroudTool {
                     Image(systemName: "apple.image.playground")
                         .resizable()
@@ -113,28 +119,23 @@ struct ToolItemView: View {
                         .frame(width: 16, height: 16)
                         .foregroundColor(.accentColor)
                         .onHover { _ in
-                            appSetter.hoverHandler(target: .Backgroud)
+                            showLineWidthPicker = false
+                            showBackgroud = true
                         }
                         .popover(
-                            isPresented: $showBackgroud,
-                            arrowEdge: .leading
+                            isPresented: $showBackgroud
                         ) {
-                            CanvasBackGroudView()
-                                .onHover { _ in
-                                    appSetter.hoverHandler(target: .Backgroud)
+                            CanvasBackgroudView()
+                                .onHover { hovering in
+                                    showLineWidthPicker = false
+                                    showBackgroud = hovering
                                 }
-                                .onDisappear{
-                                    appSetter.showBackgroud = false
+                                .onDisappear {
+                                    showBackgroud = false
                                 }
                         }
                 }
             }
-        }
-        .onChange(of: appSetter.showLineWidthPicker) { _, _ in
-            showLineWidthPicker = appSetter.showLineWidthPicker
-        }
-        .onChange(of: appSetter.showBackgroud) { _, _ in
-            showBackgroud = appSetter.showBackgroud
         }
     }
 }

@@ -8,9 +8,11 @@
 import Foundation
 
 class JSON {
-
+    // MARK: encode Data to JSON
     static func encode<T: Codable>(_ value: T) -> Data? {
         let encoder = JSONEncoder()
+        // 格式化输出
+        encoder.outputFormatting = .prettyPrinted
         do {
             let data = try encoder.encode(value)
             return data
@@ -21,7 +23,8 @@ class JSON {
             return nil
         }
     }
-
+    
+    // MARK: decode Data to JSON
     static func decode<T: Codable>(_ type: T.Type, from data: Data) -> T? {
         let decoder = JSONDecoder()
         do {

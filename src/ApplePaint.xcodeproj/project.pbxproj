@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5AB594BC2D96B81E000856A1 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB594BB2D96B81E000856A1 /* AlertToast */; };
+		5ABDEF192D97D9EE00352BCF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5ABDEF182D97D9EC00352BCF /* .gitignore */; };
+		5ABDEF1E2D97E6E700352BCF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ABDEF1D2D97E6E700352BCF /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5ABDEF182D97D9EC00352BCF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5ABDEF1D2D97E6E700352BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A01FF8272D2B364100E56EBB /* ApplePaint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePaint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01FF8382D2B364300E56EBB /* ApplePaintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePaintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01FF8422D2B364300E56EBB /* ApplePaintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePaintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,13 +41,18 @@
 		5A0978492D944C7D0072F87E /* Exceptions for "ApplePaint" folder in "ApplePaint" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			platformFiltersByRelativePath = {
-				View/CanvasView.swift = (macos, );
+				View/Canvas/CanvasView.swift = (macos, );
 			};
 			target = A01FF8262D2B364100E56EBB /* ApplePaint */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5AC76A6E2D99795900EF11BD /* Documents */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Documents;
+			sourceTree = "<group>";
+		};
 		A01FF8292D2B364100E56EBB /* ApplePaint */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -83,6 +92,9 @@
 		A01FF81E2D2B364100E56EBB = {
 			isa = PBXGroup;
 			children = (
+				5AC76A6E2D99795900EF11BD /* Documents */,
+				5ABDEF1D2D97E6E700352BCF /* Info.plist */,
+				5ABDEF182D97D9EC00352BCF /* .gitignore */,
 				A01FF8292D2B364100E56EBB /* ApplePaint */,
 				A01FF8282D2B364100E56EBB /* Products */,
 			);
@@ -114,6 +126,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				5AC76A6E2D99795900EF11BD /* Documents */,
 				A01FF8292D2B364100E56EBB /* ApplePaint */,
 			);
 			name = ApplePaint;
@@ -217,6 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ABDEF192D97D9EE00352BCF /* .gitignore in Resources */,
+				5ABDEF1E2D97E6E700352BCF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

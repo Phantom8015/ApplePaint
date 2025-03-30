@@ -9,7 +9,7 @@ import AppKit
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    
+    // MARK: Close Color Panel When App Closed
     func applicationWillTerminate(_ notification: Notification) {
         DispatchQueue.main.async {
             NSColorPanel.shared.orderOut(nil)

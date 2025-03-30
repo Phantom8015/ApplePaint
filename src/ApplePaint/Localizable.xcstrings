@@ -5,7 +5,15 @@
       "shouldTranslate" : false
     },
     "Acrylic" : {
-      "comment" : "亚克力效果"
+      "comment" : "亚克力效果",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "亚克力效果"
+          }
+        }
+      }
     },
     "Add Color Perpetual" : {
       "comment" : "Add Color",
@@ -23,6 +31,9 @@
           }
         }
       }
+    },
+    "Add Color to Favorites" : {
+      "comment" : "Add Color"
     },
     "Bring Canvas to Front" : {
       "comment" : "置顶画布",
@@ -58,24 +69,6 @@
         }
       }
     },
-    "Bring Tool Window to Front" : {
-      "comment" : "置顶工具面板",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bring Tool Window to Front"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "置顶工具面板"
-          }
-        }
-      }
-    },
     "Bring Window to Front" : {
       "comment" : "置顶窗口",
       "localizations" : {
@@ -96,8 +89,12 @@
     "Canvas" : {
       "shouldTranslate" : false
     },
+    "Choose Thickness" : {
+      "comment" : "选择画笔粗细"
+    },
     "ChooseThickness" : {
       "comment" : "选择画笔粗细",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -114,7 +111,7 @@
       }
     },
     "Clear All" : {
-      "comment" : "Clear All",
+      "comment" : "Clear All\n清空画布",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -132,6 +129,7 @@
     },
     "Color Already Exist" : {
       "comment" : "颜色已存在",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -146,6 +144,9 @@
           }
         }
       }
+    },
+    "Color Already Exists" : {
+
     },
     "Color RollBack" : {
       "comment" : "上一个颜色",
@@ -164,6 +165,9 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "Color Temporarily Added" : {
+
     },
     "colorful" : {
       "comment" : "颜色",
@@ -199,26 +203,21 @@
         }
       }
     },
-    "customize" : {
-      "comment" : "自定义照片",
-      "extractionState" : "stale",
+    "Customize" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Custom Picture"
+            "value" : "Customize"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自定义照片"
+            "value" : "自定义图片"
           }
         }
       }
-    },
-    "Customize" : {
-
     },
     "Decoding failed: " : {
       "comment" : "Decoding failed",
@@ -238,7 +237,24 @@
       }
     },
     "Disable Eraser" : {
-      "comment" : "Disable Eraser"
+      "comment" : "Disable Eraser",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disable Eraser"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭橡皮擦"
+          }
+        }
+      }
+    },
+    "Double clicking a color " : {
+      "comment" : "双击任一颜色"
     },
     "Double Mouse Click Color" : {
       "comment" : "双击任一颜色",
@@ -326,32 +342,50 @@
         }
       }
     },
-    "Hidden BackGroud Tool" : {
-      "comment" : "隐藏背景",
-      "extractionState" : "stale",
+    "Eraser Disabled" : {
+      "comment" : "关闭橡皮擦"
+    },
+    "Eraser Enabled" : {
+      "comment" : "打开橡皮擦"
+    },
+    "Export As" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hidden BackGroud Tool"
+            "value" : "Export As"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "隐藏背景"
+            "value" : "导出为"
           }
         }
       }
     },
-    "Hidden Clear Tool" : {
-      "comment" : "隐藏清空",
-      "extractionState" : "stale",
+    "Hide Backgroud Tool" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hidden Clear Tool"
+            "value" : "Hide Backgroud Tool"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏背景按钮"
+          }
+        }
+      }
+    },
+    "Hide Clear Tool" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hide Clear Tool"
           }
         },
         "zh-Hans" : {
@@ -362,53 +396,108 @@
         }
       }
     },
-    "Hidden Eraser" : {
-      "comment" : "隐藏 橡皮擦",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hidden Eraser"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "隐藏 橡皮擦"
-          }
-        }
-      }
-    },
-    "Hidden UndoRedo" : {
-      "comment" : "隐藏 撤回按钮组",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hidden UndoRedo"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "隐藏 撤回按钮组"
-          }
-        }
-      }
-    },
-    "Hide Backgroud Tool" : {
-      "comment" : "隐藏背景"
-    },
-    "Hide Clear Tool" : {
-      "comment" : "隐藏清空"
-    },
     "Hide Eraser" : {
-      "comment" : "隐藏 橡皮擦"
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hide Eraser"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏橡皮擦"
+          }
+        }
+      }
     },
     "Hide Undo Redo" : {
-      "comment" : "隐藏 撤回按钮组"
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hide Undo Redo"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏撤回按钮组"
+          }
+        }
+      }
+    },
+    "Hold Shift to Draw a Straight Line" : {
+      "comment" : "长按Shift画直线",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold Shift to Draw a Straight Line"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "长按 Shift 画直线"
+          }
+        }
+      }
+    },
+    "Loading Failed" : {
+      "comment" : "加载失败",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading Failed"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加载失败"
+          }
+        }
+      }
+    },
+    "New Canvas" : {
+      "comment" : "新建画布"
+    },
+    "No Content" : {
+      "comment" : "没有内容",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Content"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画布没有内容"
+          }
+        }
+      }
+    },
+    "Open Canvas" : {
+      "comment" : "打开画布",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Canvas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开画布"
+          }
+        }
+      }
     },
     "Open Canvas Window" : {
       "comment" : "打开画布",
@@ -428,7 +517,7 @@
       }
     },
     "Open Color Panel" : {
-      "comment" : "Open Color Panel",
+      "comment" : "Open Color Panel\n打开颜色面板",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -461,6 +550,9 @@
           }
         }
       }
+    },
+    "opens the Color Panel" : {
+      "comment" : "打开颜色面板"
     },
     "Pick Color" : {
       "comment" : "选择颜色",
@@ -496,9 +588,7 @@
         }
       }
     },
-    "picture" : {
-      "comment" : "照片",
-      "extractionState" : "stale",
+    "Picture" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -513,9 +603,6 @@
           }
         }
       }
-    },
-    "Picture" : {
-
     },
     "Redo" : {
       "comment" : "Redo",
@@ -551,6 +638,9 @@
         }
       }
     },
+    "Right Click a color for more features" : {
+      "comment" : "更多功能 右键任一颜色"
+    },
     "Right Click for More Features" : {
       "comment" : "更多功能 右键任一颜色",
       "extractionState" : "stale",
@@ -569,6 +659,81 @@
         }
       }
     },
+    "Save" : {
+      "comment" : "选择保存位置"
+    },
+    "Save As Image" : {
+      "comment" : "Save As Image",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save As Image"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "导出为图片"
+          }
+        }
+      }
+    },
+    "Save Canvas" : {
+      "comment" : "保存画布",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save Canvas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存画布"
+          }
+        }
+      }
+    },
+    "Save Failed" : {
+      "comment" : "保存失败",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save Failed"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存失败"
+          }
+        }
+      }
+    },
+    "Save Successfully" : {
+      "comment" : "保存成功",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save Successfully"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存成功"
+          }
+        }
+      }
+    },
+    "Saved Successfully" : {
+      "comment" : "保存成功"
+    },
     "Scaled to Fill" : {
       "comment" : "缩放至填充",
       "localizations" : {
@@ -582,6 +747,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "缩放至填充"
+          }
+        }
+      }
+    },
+    "Select The Folder to Save" : {
+      "comment" : "选择保存位置",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select The Folder to Save"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择保存位置"
           }
         }
       }
@@ -603,6 +786,9 @@
         }
       }
     },
+    "Settings" : {
+
+    },
     "Shrink Canvas Size" : {
       "comment" : "缩小画布",
       "localizations" : {
@@ -622,6 +808,7 @@
     },
     "Temporarily Add Color" : {
       "comment" : "暂时添加颜色",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -859,7 +1046,7 @@
       }
     },
     "Unenable Eraser" : {
-      "comment" : "Disable Eraser",
+      "comment" : "关闭橡皮擦",
       "extractionState" : "stale",
       "localizations" : {
         "en" : {
@@ -872,24 +1059,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "关闭橡皮擦"
-          }
-        }
-      }
-    },
-    "visualEffectBlur" : {
-      "comment" : "视觉效果模糊",
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VisualEffectBlur"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "视觉效果模糊"
           }
         }
       }
