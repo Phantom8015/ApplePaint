@@ -38,7 +38,7 @@ class ColorPanelDelegate: NSObject {
                     AppCanvas.shared.selectedColor = newColor
                     AppSetter.shared.showToast(
                         message: NSLocalizedString(
-                            "Color Already Exist", comment: "")
+                            "Color Already Exists", comment: "")
                             + ":    "
                             + newColor.toHex()
                             + "  "
@@ -48,7 +48,7 @@ class ColorPanelDelegate: NSObject {
                     AppCanvas.shared.customizeColor.append(newColor)
                     AppSetter.shared.showToast(
                         message: NSLocalizedString(
-                            "Temporarily Add Color", comment: "")
+                            "Color Temporarily Added", comment: "")
                             + ":    "
                             + newColor.toHex())
                 }

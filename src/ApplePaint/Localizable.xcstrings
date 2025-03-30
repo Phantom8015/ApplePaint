@@ -32,6 +32,9 @@
         }
       }
     },
+    "Add Color to Favorites" : {
+      "comment" : "Add Color"
+    },
     "Bring Canvas to Front" : {
       "comment" : "置顶画布",
       "localizations" : {
@@ -86,8 +89,12 @@
     "Canvas" : {
       "shouldTranslate" : false
     },
+    "Choose Thickness" : {
+      "comment" : "选择画笔粗细"
+    },
     "ChooseThickness" : {
       "comment" : "选择画笔粗细",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -122,6 +129,7 @@
     },
     "Color Already Exist" : {
       "comment" : "颜色已存在",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -136,6 +144,9 @@
           }
         }
       }
+    },
+    "Color Already Exists" : {
+
     },
     "Color RollBack" : {
       "comment" : "上一个颜色",
@@ -154,6 +165,9 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "Color Temporarily Added" : {
+
     },
     "colorful" : {
       "comment" : "颜色",
@@ -239,8 +253,12 @@
         }
       }
     },
+    "Double clicking a color " : {
+      "comment" : "双击任一颜色"
+    },
     "Double Mouse Click Color" : {
       "comment" : "双击任一颜色",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -257,7 +275,7 @@
       }
     },
     "Enable Eraser" : {
-      "comment" : "Enable Eraser\n打开橡皮擦",
+      "comment" : "Enable Eraser",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -323,6 +341,12 @@
           }
         }
       }
+    },
+    "Eraser Disabled" : {
+      "comment" : "关闭橡皮擦"
+    },
+    "Eraser Enabled" : {
+      "comment" : "打开橡皮擦"
     },
     "Export As" : {
       "localizations" : {
@@ -511,6 +535,7 @@
     },
     "Open Tool Window" : {
       "comment" : "打开工具面板",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -525,6 +550,9 @@
           }
         }
       }
+    },
+    "opens the Color Panel" : {
+      "comment" : "打开颜色面板"
     },
     "Pick Color" : {
       "comment" : "选择颜色",
@@ -610,8 +638,12 @@
         }
       }
     },
+    "Right Click a color for more features" : {
+      "comment" : "更多功能 右键任一颜色"
+    },
     "Right Click for More Features" : {
       "comment" : "更多功能 右键任一颜色",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -626,6 +658,9 @@
           }
         }
       }
+    },
+    "Save" : {
+      "comment" : "选择保存位置"
     },
     "Save As Image" : {
       "comment" : "Save As Image",
@@ -680,6 +715,7 @@
     },
     "Save Successfully" : {
       "comment" : "保存成功",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -694,6 +730,9 @@
           }
         }
       }
+    },
+    "Saved Successfully" : {
+      "comment" : "保存成功"
     },
     "Scaled to Fill" : {
       "comment" : "缩放至填充",
@@ -714,6 +753,7 @@
     },
     "Select The Folder to Save" : {
       "comment" : "选择保存位置",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -746,6 +786,9 @@
         }
       }
     },
+    "Settings" : {
+
+    },
     "Shrink Canvas Size" : {
       "comment" : "缩小画布",
       "localizations" : {
@@ -765,6 +808,7 @@
     },
     "Temporarily Add Color" : {
       "comment" : "暂时添加颜色",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1003,6 +1047,7 @@
     },
     "Unenable Eraser" : {
       "comment" : "关闭橡皮擦",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

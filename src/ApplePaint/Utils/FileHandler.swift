@@ -9,8 +9,8 @@ import AppKit
 import SwiftUICore
 import UniformTypeIdentifiers
 
-private let saveFolder = NSLocalizedString("Select The Folder to Save", comment: "选择保存位置")
-private let saveSuccess = NSLocalizedString("Save Successfully", comment: "保存成功")
+private let saveFolder = NSLocalizedString("Save", comment: "选择保存位置")
+private let saveSuccess = NSLocalizedString("Saved Successfully", comment: "保存成功")
 private let saveFailed = NSLocalizedString("Save Failed", comment: "保存失败")
 private let defaultFileName = "drawing"
 
@@ -33,6 +33,14 @@ func openCanvasFile() {
     let panel = NSOpenPanel()
     panel.allowsMultipleSelection = false
     panel.canChooseDirectories = false
+    
+    // Update to use the new UTType identifier
+    if let paintType = UTType("com.applePaint.canvas") {
+        panel.allowedContentTypes = [paintType]
+    } else {
+        panel.allowedContentTypes = [UTType(filenameExtension: "paint")!]
+    }
+    
     if panel.runModal() == .OK, let fileURL = panel.url {
         do {
             let fileData = try Data(contentsOf: fileURL)
@@ -109,12 +117,21 @@ func saveCanvasFile() {
     panel.nameFieldStringValue = defaultFileName
     panel.title = NSLocalizedString("Save Canvas", comment: "保存画布")
     panel.prompt = saveFolder
+    
+    // Update to use the new UTType identifier
+    if let paintType = UTType("com.applePaint.canvas") {
+        panel.allowedContentTypes = [paintType]
+    } else {
+        panel.allowedContentTypes = [UTType(filenameExtension: "paint")!]
+    }
+    
+    panel.allowsOtherFileTypes = false
+    panel.isExtensionHidden = false
 
     if panel.runModal() == .OK, let folderURL = panel.url {
         do {
-            let fileURL = folderURL.appendingPathExtension("paint")
-            if try encode?.write(to: fileURL) != nil {
-                AppSetter.shared.showToast( message: saveSuccess)
+            if try encode?.write(to: folderURL) != nil {
+                AppSetter.shared.showToast(message: saveSuccess)
             }
         } catch {
             AppSetter.shared.showToast(
@@ -144,6 +161,28 @@ func exportPaint(exportFormat: ExportFormat) {
     panel.nameFieldStringValue = defaultFileName
     panel.title = NSLocalizedString("Save As Image", comment: "Save As Image")
     panel.prompt = saveFolder
+    
+    let appending: String
+    let filetype: NSBitmapImageRep.FileType
+    
+    switch exportFormat {
+    case .Png:
+        filetype = .png
+        appending = "png"
+        panel.allowedContentTypes = [UTType(filenameExtension: "png")!]
+    case .Jpeg:
+        filetype = .jpeg
+        appending = "jpeg"
+        panel.allowedContentTypes = [UTType(filenameExtension: "jpeg")!]
+    case .Tiff:
+        filetype = .tiff
+        appending = "tiff"
+        panel.allowedContentTypes = [UTType(filenameExtension: "tiff")!]
+    }
+    
+    panel.allowsOtherFileTypes = false
+    panel.isExtensionHidden = false
+    
     // Must wait for the main thread, view to update
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
         contentView.cacheDisplay(in: contentView.bounds, to: bitmapRep!)
@@ -151,19 +190,6 @@ func exportPaint(exportFormat: ExportFormat) {
     }
     image.addRepresentation(bitmapRep!)
 
-    let filetype: NSBitmapImageRep.FileType
-    let appending: String
-    switch exportFormat {
-    case .Png:
-        filetype = .png
-        appending = "png"
-    case .Jpeg:
-        filetype = .jpeg
-        appending = "jpeg"
-    case .Tiff:
-        filetype = .tiff
-        appending = "tiff"
-    }
     if panel.runModal() == .OK, let fileURL = panel.url {
         do {
             if let tiffRepresentation = image.tiffRepresentation,
@@ -171,9 +197,8 @@ func exportPaint(exportFormat: ExportFormat) {
                 let data = bitmap.representation(
                     using: filetype, properties: [:])
             {
-                let fileURL = fileURL.appendingPathExtension(appending)
                 try data.write(to: fileURL)
-                AppSetter.shared.showToast( message: saveSuccess)
+                AppSetter.shared.showToast(message: saveSuccess)
             }
         } catch {
             AppSetter.shared.showToast(

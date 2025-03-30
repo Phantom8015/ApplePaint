@@ -13,16 +13,14 @@ struct CanvasTipView: View {
         VStack(alignment: .leading, spacing: 8) {
             Texts(
                 label: NSLocalizedString(
-                    "Double Mouse Click Color",
+                    "Double clicking a color ",
                     comment: "双击任一颜色")
                     + NSLocalizedString(
-                        "Open Color Panel", comment: "打开颜色面板"))
+                        "opens the Color Panel", comment: "打开颜色面板"))
             Texts(
                 label: NSLocalizedString(
-                    "Right Click for More Features",
-                    comment: "更多功能 右键任一颜色")
-                    + NSLocalizedString(
-                        "Open Color Panel", comment: "打开颜色面板"))
+                    "Right Click a color for more features",
+                    comment: "更多功能 右键任一颜色"))
             Texts(
                 label: NSLocalizedString(
                     "Hold Shift to Draw a Straight Line",
@@ -37,17 +35,13 @@ struct CanvasTipView: View {
                     + NSLocalizedString(
                         "Open Color Panel", comment: "打开颜色面板"))
             Texts(
-                label: " ⌘ t  "
-                    + NSLocalizedString(
-                        "Open Tool Window", comment: "打开工具面板"))
-            Texts(
                 label: " ⌥ 1 ... 5  to "
                     + NSLocalizedString(
                         "Pick Color", comment: "选择颜色"))
             Texts(
                 label: " ⇧ 1 ... 10  to "
                     + NSLocalizedString(
-                        "ChooseThickness", comment: "选择画笔粗细"))
+                        "Choose Thickness", comment: "选择画笔粗细"))
             Texts(
                 label: " ⌘ e  "
                     + NSLocalizedString(
@@ -57,7 +51,7 @@ struct CanvasTipView: View {
                     + NSLocalizedString(
                         "Clear All", comment: "清空画布"))
             Texts(
-                label: " ⌘ 1 ... 3  "
+                label: " ⌘ 1 ... 2  "
                     + NSLocalizedString(
                         "Bring Window to Front", comment: "置顶窗口"
                     ))

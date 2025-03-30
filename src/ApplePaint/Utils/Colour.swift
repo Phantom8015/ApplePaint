@@ -68,6 +68,12 @@ extension Color {
         )
     }
     
+    // Add this static property to get adaptive primary color
+    static var adaptivePrimary: Color {
+        let isDarkMode = NSApp.effectiveAppearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
+        return isDarkMode ? .white : .black
+    }
+    
 }
 
 

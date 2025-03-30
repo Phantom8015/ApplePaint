@@ -160,11 +160,11 @@ struct ApplePaintApp: App {
                         if appCanvas.isErasing {
                             appSetter.showToast(
                                 message: NSLocalizedString(
-                                    "Enable Eraser", comment: "打开橡皮擦"))
+                                    "Eraser Enabled", comment: "打开橡皮擦"))
                         } else {
                             appSetter.showToast(
                                 message: NSLocalizedString(
-                                    "Unenable Eraser", comment: "关闭橡皮擦"))
+                                    "Eraser Disabled", comment: "关闭橡皮擦"))
                         }
                     },
                     label: {
@@ -205,7 +205,7 @@ struct ApplePaintApp: App {
                     label: {
                         Text(
                             NSLocalizedString(
-                                "Add Color Perpetual", comment: ""))
+                                "Add Color to Favorites", comment: ""))
                     }
                 ).keyboardShortcut("a", modifiers: .option)
 
@@ -463,11 +463,27 @@ struct ApplePaintApp: App {
                     }
                 ).keyboardShortcut("-", modifiers: .command)
             }
+            // MARK: Commands
+            CommandGroup(before: .windowSize) {
+                Button(
+                    action: {
+                        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+                        if let settingsWindow = NSApp.windows.first(where: { $0.title.contains("Settings") || $0.title.contains("Preferences") }) {
+                            settingsWindow.makeKeyAndOrderFront(nil)
+                        }
+                    },
+                    label: {
+                        Text(NSLocalizedString("Settings", comment: ""))
+                    }
+                ).keyboardShortcut(",", modifiers: .command)
+            }
         }
         // MARK: Settings
         Settings {
             SettingView()
                 .environmentObject(appSetter)
         }
+        .windowStyle(.titleBar)
+        .windowResizability(.contentSize)
     }
 }

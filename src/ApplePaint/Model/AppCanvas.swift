@@ -19,21 +19,22 @@ class AppCanvas: ObservableObject {
 
     // MARK: Color Properties
     @Published var baseColor: [Color] = [
-        Color(hex: "#0000FF"), Color(hex: "#FF0000"), Color(hex: "#00FF00"),
-        Color(hex: "#FFA500"), Color(hex: "#800080"), Color(hex: "#000000"),
-        Color(hex: "#FFFFFF"),
+        .primary, // This will be white in dark mode and black in light mode
+        Color(hex: "#0000FF"), Color(hex: "#FF0000"), 
+        Color(hex: "#00FF00"), Color(hex: "#FFA500"), Color(hex: "#800080"), 
+        Color.white, Color.black,
     ]
     {
         didSet {
             if baseColor.isEmpty {
-                baseColor.append(.white)
+                baseColor.append(.primary) // Default to primary color if empty
             }
         }
     }
     @Published var customizeColor: [Color] = []
     var tempColor: [Color] = []
-    @Published var selectedColor: Color = Color(hex: "#000000")
-    @Published var previousColor: Color = Color(hex: "#5F8B4C")
+    @Published var selectedColor: Color = .primary // Default to primary color
+    @Published var previousColor: Color = Color(hex: "#000000")
 
     
     // MARK: Canvas Properties
@@ -48,7 +49,51 @@ class AppCanvas: ObservableObject {
         // MARK: Init Color
         customizeColor = AppSetter.shared.getCustomizeColor()
         tempColor = customizeColor
+        
+        // Set default color based on appearance
+        updateDefaultColorForAppearance()
+        
+        // Listen for appearance changes
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAppearanceChange),
+            name: NSApplication.didChangeScreenParametersNotification,
+            object: nil
+        )
+        
+        // Also observe effective appearance changes
+        DistributedNotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleAppearanceChange),
+            name: Notification.Name("AppleInterfaceThemeChangedNotification"),
+            object: nil
+        )
+        
         previousColor = selectedColor
+    }
+
+    @objc private func handleAppearanceChange() {
+        updateDefaultColorForAppearance()
+    }
+
+    private func updateDefaultColorForAppearance() {
+        let isDarkMode = NSApp.effectiveAppearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
+        
+        // Set the first color based on appearance
+        if !baseColor.isEmpty {
+            if isDarkMode {
+                // Use white in dark mode
+                baseColor[0] = Color.white
+            } else {
+                // Use black in light mode
+                baseColor[0] = Color.black
+            }
+        }
+        
+        // Update selected color if it was the default color
+        if selectedColor == Color.white || selectedColor == Color.black {
+            selectedColor = isDarkMode ? Color.white : Color.black
+        }
     }
 
     // MARK: Color Rollback
