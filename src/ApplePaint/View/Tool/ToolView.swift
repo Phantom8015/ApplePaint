@@ -33,8 +33,6 @@ struct ToolView:View {
             }
         }
         .padding(.vertical)
-        .frame(width: 48)
-        .frame(maxHeight: .infinity)
         .background {
             switch appSetter.canvasBackground {
             case .VisualEffectBlur:
