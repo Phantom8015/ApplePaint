@@ -23,8 +23,6 @@ class AppSetter: ObservableObject {
     // 线条
     @AppStorage("lineWidth") var lineWidth: Double = 6.0
 
-    // TODO 导出 Json 导入 Json、导出图片
-
     // MARK: 背景
     let canvasBackgroudColorSet: [Color] = [
         Color(hex: "#ebfef1"), Color(hex: "#ffeff7"), Color(hex: "#fee6e4"),

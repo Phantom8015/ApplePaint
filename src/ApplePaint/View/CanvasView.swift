@@ -54,6 +54,10 @@ struct CanvasView: View {
                                 comment: "更多功能 右键任一颜色")
                                 + NSLocalizedString(
                                     "Open Color Panel", comment: "打开颜色面板"))
+                        Texts(
+                            label: NSLocalizedString(
+                                "Hold Shift to Draw a Straight Line",
+                                comment: "长按Shift画直线"))
                         Divider()
                         Texts(
                             label: " ⌘ c  "
