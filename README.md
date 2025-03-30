@@ -88,7 +88,7 @@
 
 ## License
 
-Licensed under a Proprietary License - see the [[LICENSE](LICENSE)](https://github.com/Phantom8015/ApplePaint/blob/main/LICENSE.md) file for details.
+Licensed under a Proprietary License - see the [LICENSE](https://github.com/Phantom8015/ApplePaint/blob/main/LICENSE.md) file for details.
 
 ---
 ApplePaint makes drawing simple and fun on macOS. Enjoy creating!
