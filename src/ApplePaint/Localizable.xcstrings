@@ -4,8 +4,11 @@
     "" : {
       "shouldTranslate" : false
     },
+    "Acrylic" : {
+      "comment" : "亚克力效果"
+    },
     "Add Color Perpetual" : {
-      "comment" : "添加颜色",
+      "comment" : "Add Color",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -57,6 +60,7 @@
     },
     "Bring Tool Window to Front" : {
       "comment" : "置顶工具面板",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -110,7 +114,7 @@
       }
     },
     "Clear All" : {
-      "comment" : "清空画布",
+      "comment" : "Clear All",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -179,7 +183,7 @@
       }
     },
     "Copy Color" : {
-      "comment" : "拷贝颜色 Hex",
+      "comment" : "Copy Color Hex",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -197,6 +201,7 @@
     },
     "customize" : {
       "comment" : "自定义照片",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -212,8 +217,11 @@
         }
       }
     },
+    "Customize" : {
+
+    },
     "Decoding failed: " : {
-      "comment" : "解码失败",
+      "comment" : "Decoding failed",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -229,8 +237,12 @@
         }
       }
     },
+    "Disable Eraser" : {
+      "comment" : "Disable Eraser"
+    },
     "Double Mouse Click Color" : {
       "comment" : "双击任一颜色",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -247,7 +259,7 @@
       }
     },
     "Enable Eraser" : {
-      "comment" : "打开橡皮擦",
+      "comment" : "Enable Eraser",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -264,7 +276,7 @@
       }
     },
     "Encoding failed" : {
-      "comment" : "编码失败: ",
+      "comment" : "Encoding failed",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -316,6 +328,7 @@
     },
     "Hidden BackGroud Tool" : {
       "comment" : "隐藏背景",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -333,6 +346,7 @@
     },
     "Hidden Clear Tool" : {
       "comment" : "隐藏清空",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -350,6 +364,7 @@
     },
     "Hidden Eraser" : {
       "comment" : "隐藏 橡皮擦",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -367,6 +382,7 @@
     },
     "Hidden UndoRedo" : {
       "comment" : "隐藏 撤回按钮组",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -454,7 +470,7 @@
       }
     },
     "Open Color Panel" : {
-      "comment" : "打开颜色面板",
+      "comment" : "Open Color Panel",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -472,6 +488,7 @@
     },
     "Open Tool Window" : {
       "comment" : "打开工具面板",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -505,7 +522,7 @@
       }
     },
     "Pick Color: " : {
-      "comment" : "选择颜色:",
+      "comment" : "Pick Color: ",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -523,6 +540,7 @@
     },
     "picture" : {
       "comment" : "照片",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -538,8 +556,11 @@
         }
       }
     },
+    "Picture" : {
+
+    },
     "Redo" : {
-      "comment" : "取消撤销",
+      "comment" : "Redo",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -556,7 +577,7 @@
       }
     },
     "Remove Color" : {
-      "comment" : "删除颜色",
+      "comment" : "Remove Color",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -574,6 +595,7 @@
     },
     "Right Click for More Features" : {
       "comment" : "更多功能 右键任一颜色",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -929,11 +951,8 @@
         }
       }
     },
-    "Tools" : {
-      "shouldTranslate" : false
-    },
     "Undo" : {
-      "comment" : "撤销",
+      "comment" : "Undo",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -950,7 +969,8 @@
       }
     },
     "Unenable Eraser" : {
-      "comment" : "关闭橡皮擦",
+      "comment" : "Disable Eraser",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -968,6 +988,7 @@
     },
     "visualEffectBlur" : {
       "comment" : "视觉效果模糊",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

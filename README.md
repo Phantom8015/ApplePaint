@@ -1,5 +1,9 @@
+<p align="center">
+<img src="https://raw.githubusercontent.com/Phantom8015/ApplePaint/refs/heads/main/ApplePaint.png" width="150" height="150"/>
+<p>
+<h1 align="center">ApplePaint</h1>
+<p align="center">
 
-# ApplePaint
 
 ApplePaint is a simple, interactive drawing app built using SwiftUI. It allows users to create drawings using various colors, line widths, and even erase their work. The app includes an easy-to-use interface with intuitive touch gestures for drawing, undoing, and redoing actions. Users can also pick colors using a color picker and adjust the line thickness to suit their preferences.
 
@@ -33,9 +37,9 @@ ApplePaint is a simple, interactive drawing app built using SwiftUI. It allows u
 ### Drawing
 
 - Use your mouse or trackpad (or touch gestures on a device) to draw on the canvas.
-- Select a color by tapping on one of the color circles at the bottom.
+- Select a color by clicking on one of the color circles at the bottom.
 - Adjust the line thickness using the "scribble" icon.
-- Tap the eraser icon to switch between drawing and erasing modes.
+- Click the eraser icon to switch between drawing and erasing modes.
   
 ### Undo/Redo
 
@@ -44,12 +48,35 @@ ApplePaint is a simple, interactive drawing app built using SwiftUI. It allows u
 
 ### Clearing the Canvas
 
-- Tap the trash icon to clear all your drawings from the canvas.
+- Click the trash icon to clear all your drawings from the canvas.
 
-### Custom Color Picker
 
-- Tap the palette icon to bring up the color picker and choose any color.
-  
+### Keyboard Shortcuts
+
+#### Drawing Tools
+- ⌘ Z (Command+Z) - Undo
+- ⌘ ⇧ Z (Command+Shift+Z) - Redo
+- ⌘ E (Command+E) - Toggle Eraser
+- ⌘ ⇧ C (Command+Shift+C) - Clear All
+
+#### Color Management
+- ⌘ F (Command+F) - Open Custom Color Panel
+- ⌥ 1-5 (Option+1-5) - Pick Color (1-5)
+- ⌥ B (Option+B) - Color Rollback
+- ⌥ A (Option+A) - Add Color Perpetual
+- ⌥ R (Option+R) - Remove Color
+
+#### Line Thickness
+- ⇧ 1-10 (Shift+1-10) - Choose Thickness (1-10)
+
+#### Window Management
+- ⌘ C (Command+C) - Open Canvas Window
+- ⌘ 1 (Command+1) - Bring Canvas to Front
+- ⌘ 2 (Command+2) - Bring Color Panel to Front
+
+#### Canvas Size
+- ⌘ = (Command+=) - Enlarge Canvas Size
+- ⌘ - (Command+-) - Shrink Canvas Size
 
 ## License
 
@@ -57,4 +84,4 @@ This project is licensed under a Proprietary License - see the [LICENSE](LICENSE
 
 ---
 
-ApplePaint provides a great way to experiment with simple drawing mechanics on iOS/macOS. Enjoy creating beautiful sketches or doodles!
+ApplePaint provides a great way to experiment with simple drawing mechanics on macOS. Enjoy creating beautiful sketches or doodles!

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VisualEffectBlur: NSViewRepresentable {
     
-    // MARK: 视觉效果视图
+    
     func makeNSView(context: Context) -> NSVisualEffectView {
         let view = NSVisualEffectView()
         view.blendingMode = .behindWindow

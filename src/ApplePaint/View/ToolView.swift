@@ -11,17 +11,13 @@ struct ToolView:View {
     
     @EnvironmentObject var appCanvas: AppCanvas
     @EnvironmentObject var appSetter: AppSetter
-    // MARK: Body
+    
     var body: some View {
         VStack {
             ColorView()
                 .environmentObject(appCanvas)
                 .environmentObject(appSetter)
               
-            Divider().frame(height: 2)
-                .overlay {
-                    Rectangle().foregroundStyle(.gray.opacity(0.6))
-                }.cornerRadius(1)
             ToolItemView()
                 .environmentObject(appCanvas)
                 .environmentObject(appSetter)
@@ -39,5 +35,17 @@ struct ToolView:View {
         .padding(.vertical)
         .frame(width: 48)
         .frame(maxHeight: .infinity)
+        .background {
+            switch appSetter.canvasBackground {
+            case .VisualEffectBlur:
+                VisualEffectBlur()
+            case .Colorful:
+                Color(hex: appSetter.colorBackgourd)
+            case .Picture:
+                Color.clear
+            case .Customize:
+                Color.clear
+            }
+        }
     }
 }
