@@ -1,87 +1,95 @@
 <p align="center">
 <img src="https://raw.githubusercontent.com/Phantom8015/ApplePaint/refs/heads/main/ApplePaint.png" width="150" height="150"/>
-<p>
+</p>
 <h1 align="center">ApplePaint</h1>
-<p align="center">
-
-
-ApplePaint is a simple, interactive drawing app built using SwiftUI. It allows users to create drawings using various colors, line widths, and even erase their work. The app includes an easy-to-use interface with intuitive touch gestures for drawing, undoing, and redoing actions. Users can also pick colors using a color picker and adjust the line thickness to suit their preferences.
+<p align="center">ApplePaint is a simple, interactive drawing app built using SwiftUI. Users can create drawings with various colors, line widths, and an eraser tool. The intuitive interface supports touch gestures for drawing, undoing, and redoing actions.</p>
 
 ## Features
 
-- **Drawing**: Draw freehand using touch gestures.
-- **Color Palette**: Choose from a variety of preset colors or select a custom color using the color picker.
-- **Eraser**: Toggle between drawing and erasing.
-- **Line Width**: Adjust the thickness of the drawing lines.
-- **Undo/Redo**: Easily undo and redo your drawing actions.
-- **Clear All**: Remove all drawings from the canvas.
-- **Intuitive Interface**: Easy-to-use interface with color swatches, undo/redo buttons, and more.
+- **Drawing**: Freehand drawing.
+- **Color Palette**: Select from preset colors or use a custom color picker.
+- **Eraser**: Switch between drawing and erasing.
+- **Line Width**: Adjustable line thickness.
+- **Undo/Redo**: Effortless action reversal.
+- **Clear All**: Reset the canvas.
+- **Saving & Loading**: Save as PNG, JPEG, TIFF, or ApplePaint's `.paint` format.
+- **Open Saved Canvases**: Load `.paint` files for continued editing.
+- **User-Friendly UI**: Simple controls with color swatches, undo/redo buttons, and more.
 
 ## Installation
 
-1. Clone this repository to your local machine:
+1. Clone the repository:
    ```bash
    git clone https://github.com/Phantom8015/ApplePaint
    ```
-
 2. Open the project in Xcode:
- 1. Open Xcode.
- 2. When prompted, select `Open existing project...`.
- 3. Navigate to the directory where you cloned the repository and select the `src` folder.
- 4. Click `Open`.
-
+   - Open Xcode and select `Open existing project...`.
+   - Navigate to the cloned directory and select the `src` folder.
+   - Click `Open`.
 3. Build and run the project.
 
 ## Usage
 
 ### Drawing
+- Use mouse, trackpad, or touch gestures to draw.
+- Pick a color by clicking a color circle.
+- Adjust line thickness with the "scribble" icon.
+- Use the eraser icon to switch modes.
 
-- Use your mouse or trackpad (or touch gestures on a device) to draw on the canvas.
-- Select a color by clicking on one of the color circles at the bottom.
-- Adjust the line thickness using the "scribble" icon.
-- Click the eraser icon to switch between drawing and erasing modes.
-  
 ### Undo/Redo
-
-- Use the backward arrow icon to undo your last action.
-- Use the forward arrow icon to redo an action you have undone.
+- Click the backward arrow for undo.
+- Click the forward arrow for redo.
 
 ### Clearing the Canvas
+- Click the trash icon to erase all drawings.
 
-- Click the trash icon to clear all your drawings from the canvas.
+### Saving & Exporting
+- Click **Save** to store your artwork.
+- Available formats:
+  - PNG (.png)
+  - JPEG (.jpeg)
+  - TIFF (.tiff)
+  - ApplePaint Canvas (.paint)
 
+### Opening a `.paint` File
+- Click **Open** and select a `.paint` file.
+- Resume editing with all settings intact.
 
 ### Keyboard Shortcuts
 
 #### Drawing Tools
-- ⌘ Z (Command+Z) - Undo
-- ⌘ ⇧ Z (Command+Shift+Z) - Redo
-- ⌘ E (Command+E) - Toggle Eraser
-- ⌘ ⇧ C (Command+Shift+C) - Clear All
+- ⌘ Z - Undo
+- ⌘ ⇧ Z - Redo
+- ⌘ E - Toggle Eraser
+- ⌘ ⇧ C - Clear All
 
 #### Color Management
-- ⌘ F (Command+F) - Open Custom Color Panel
-- ⌥ 1-5 (Option+1-5) - Pick Color (1-5)
-- ⌥ B (Option+B) - Color Rollback
-- ⌥ A (Option+A) - Add Color Perpetual
-- ⌥ R (Option+R) - Remove Color
+- ⌘ F - Open Custom Color Panel
+- ⌥ 1-5 - Pick Color (1-5)
+- ⌥ R - Remove Color
 
 #### Line Thickness
-- ⇧ 1-10 (Shift+1-10) - Choose Thickness (1-10)
+- ⇧ 1-10 - Choose Thickness (1-10)
 
 #### Window Management
-- ⌘ C (Command+C) - Open Canvas Window
-- ⌘ 1 (Command+1) - Bring Canvas to Front
-- ⌘ 2 (Command+2) - Bring Color Panel to Front
+- ⌘ 1 - Show Canvas
+- ⌘ 2 - Show Color Panel
 
 #### Canvas Size
-- ⌘ = (Command+=) - Enlarge Canvas Size
-- ⌘ - (Command+-) - Shrink Canvas Size
+- `⌘ +` - Enlarge Canvas
+- `⌘ -` - Shrink Canvas
+
+#### Saving & Loading
+- ⌘ S - Save as `.paint`
+- ⌘ O - Open `.paint`
+- ⌘ P - Save as `.png`
+- ⌘ T - Save as `.tiff`
+- ⌘ J - Save as `.jpeg`
 
 ## License
 
-This project is licensed under a Proprietary License - see the [LICENSE](LICENSE) file for details.
+Licensed under a Proprietary License - see the [LICENSE](LICENSE) file for details.
 
 ---
+ApplePaint makes drawing simple and fun on macOS. Enjoy creating!
 
-ApplePaint provides a great way to experiment with simple drawing mechanics on macOS. Enjoy creating beautiful sketches or doodles!
