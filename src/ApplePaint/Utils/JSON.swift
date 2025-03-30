@@ -12,7 +12,8 @@ class JSON {
     // MARK: 编码泛型方法
     static func encode<T: Codable>(_ value: T) -> Data? {
         let encoder = JSONEncoder()
-        //        encoder.outputFormatting = .prettyPrinted // 格式化输出
+        // 格式化输出
+        encoder.outputFormatting = .prettyPrinted
         do {
             let data = try encoder.encode(value)
             return data

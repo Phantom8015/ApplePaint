@@ -18,14 +18,11 @@ struct ApplePaintApp: App {
     
     let undo = NSLocalizedString("Undo", comment: "撤销")
     let redo = NSLocalizedString("Redo", comment: "取消撤销")
-    let eraser = NSLocalizedString("Eraser", comment: "橡皮擦")
-    let enableEraser = NSLocalizedString("Enable Eraser", comment: "打开橡皮擦")
-    let unenableEraser = NSLocalizedString("Unenable Eraser", comment: "关闭橡皮擦")
     let clearAll = NSLocalizedString("Clear All", comment: "清空画布")
     let colorRollBack = NSLocalizedString("Color RollBack", comment: "上一个颜色")
     let addColorPerpetual = NSLocalizedString("Add Color Perpetual", comment: "添加颜色")
     let removeColor = NSLocalizedString("Remove Color", comment: "删除颜色")
-    let thickness = NSLocalizedString("Thickness", comment: "画笔粗细")
+
     let thickness1 = NSLocalizedString("Thickness 1", comment: "1 像素")
     let thickness2 = NSLocalizedString("Thickness 2", comment: "2 像素")
     let thickness3 = NSLocalizedString("Thickness 3", comment: "3 像素")
@@ -86,6 +83,25 @@ struct ApplePaintApp: App {
         .commands {
             // MARK: Command
             CommandGroup(replacing: .newItem) {}
+            // MARK: Save
+            CommandGroup(replacing: .saveItem){
+                Button(
+                    action: {
+                        saveFileToFolder()
+                    },
+                    label: {
+                        Text(NSLocalizedString("Save Canvas", comment: "保存画布"))
+                    }
+                ).keyboardShortcut("s", modifiers: .command)
+                Button(
+                    action: {
+                        openFileToFolder()
+                    },
+                    label: {
+                        Text(NSLocalizedString("Open Canvas", comment: "打开画布"))
+                    }
+                ).keyboardShortcut("o", modifiers: .command)
+            }
             // MARK: UndoRedo
             CommandGroup(replacing: .undoRedo) {
                 Button(
@@ -112,13 +128,13 @@ struct ApplePaintApp: App {
                     action: {
                         appCanvas.isErasing.toggle()
                         if appCanvas.isErasing{
-                            appSetter.showToast(message: enableEraser)
+                            appSetter.showToast(message: NSLocalizedString("Enable Eraser", comment: "打开橡皮擦"))
                         }else{
-                            appSetter.showToast(message: unenableEraser)
+                            appSetter.showToast(message: NSLocalizedString("Unenable Eraser", comment: "关闭橡皮擦"))
                         }
                     },
                     label: {
-                        Text(eraser)
+                        Text(NSLocalizedString("Eraser", comment: "橡皮擦"))
                     }
                 ).keyboardShortcut("e", modifiers: .command)
 
@@ -173,7 +189,7 @@ struct ApplePaintApp: App {
             }
             // MARK: Pasteboard
             CommandGroup(replacing: .pasteboard) {
-                Menu(thickness) {
+                Menu(NSLocalizedString("Thickness", comment: "画笔粗细")) {
                     Button(
                         action: {
                             appSetter.lineWidth = 1

@@ -382,6 +382,60 @@
         }
       }
     },
+    "Hold Shift to Draw a Straight Line" : {
+      "comment" : "长按Shift画直线",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hold Shift to Draw a Straight Line"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "长按 Shift 画直线"
+          }
+        }
+      }
+    },
+    "Loading Failed" : {
+      "comment" : "加载失败"
+    },
+    "No Content" : {
+      "comment" : "没有内容",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Content"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "画布没有内容"
+          }
+        }
+      }
+    },
+    "Open Canvas" : {
+      "comment" : "打开画布",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Canvas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开画布"
+          }
+        }
+      }
+    },
     "Open Canvas Window" : {
       "comment" : "打开画布",
       "localizations" : {
@@ -535,6 +589,57 @@
         }
       }
     },
+    "Save Canvas" : {
+      "comment" : "保存画布",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save Canvas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存画布"
+          }
+        }
+      }
+    },
+    "Save Failed" : {
+      "comment" : "保存失败",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save Failed"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存失败"
+          }
+        }
+      }
+    },
+    "Save Successfully" : {
+      "comment" : "保存成功",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save Successfully"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存成功"
+          }
+        }
+      }
+    },
     "Scaled to Fill" : {
       "comment" : "缩放至填充",
       "localizations" : {
@@ -548,6 +653,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "缩放至填充"
+          }
+        }
+      }
+    },
+    "Select The Folder to Save" : {
+      "comment" : "选择保存位置",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select The Folder to Save"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选择保存位置"
           }
         }
       }

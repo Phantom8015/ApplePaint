@@ -24,3 +24,16 @@ extension NSImage.Name {
     static let blackboard3 = "blackboard3"
     static let blackboard4 = "blackboard4"
 }
+
+// MARK: 绘制内容 的保存结构
+struct PaintPath: Codable {
+    // 用 HEX 码表示颜色
+    var color: String
+    var lineWidth: CGFloat
+    var points: [CGPoint]
+}
+struct PaintData: Codable {
+    var paths: [PaintPath]
+    var currentPoints: [CGPoint]
+    var redoStack: [PaintPath]
+}

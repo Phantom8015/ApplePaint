@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AB117252D96DD5700379E69 /* Untitled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB117242D96DD4B00379E69 /* Untitled.swift */; };
 		5AB594BC2D96B81E000856A1 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB594BB2D96B81E000856A1 /* AlertToast */; };
+		5ABDEF192D97D9EE00352BCF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5ABDEF182D97D9EC00352BCF /* .gitignore */; };
+		5ABDEF1E2D97E6E700352BCF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ABDEF1D2D97E6E700352BCF /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5AB117242D96DD4B00379E69 /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
+		5ABDEF182D97D9EC00352BCF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5ABDEF1D2D97E6E700352BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A01FF8272D2B364100E56EBB /* ApplePaint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePaint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01FF8382D2B364300E56EBB /* ApplePaintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePaintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01FF8422D2B364300E56EBB /* ApplePaintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePaintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +87,8 @@
 		A01FF81E2D2B364100E56EBB = {
 			isa = PBXGroup;
 			children = (
-				5AB117242D96DD4B00379E69 /* Untitled.swift */,
+				5ABDEF1D2D97E6E700352BCF /* Info.plist */,
+				5ABDEF182D97D9EC00352BCF /* .gitignore */,
 				A01FF8292D2B364100E56EBB /* ApplePaint */,
 				A01FF8282D2B364100E56EBB /* Products */,
 			);
@@ -220,6 +223,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ABDEF192D97D9EE00352BCF /* .gitignore in Resources */,
+				5ABDEF1E2D97E6E700352BCF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AB117252D96DD5700379E69 /* Untitled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

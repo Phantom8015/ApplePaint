@@ -35,8 +35,8 @@ class AppCanvas: ObservableObject {
     // 用于永久保存颜色
     @Published var customizeColor: [Color] = []
     var tempColor: [Color] = []
-    @Published var selectedColor: Color = .blue
-    @Published var previousColor: Color = .black
+    @Published var selectedColor: Color = Color(hex: "#0000FF")
+    @Published var previousColor: Color = Color(hex: "#000000")
 
     // MARK: 内容
     @Published var paths:
